@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../js/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../../js/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" />
+    <script src="../../js/jquery.js"></script>
+    <script src="../../js/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="onboardingContainer">
+        <section class="leftBoard col-md-6 col-md-4">
+            <div class="owl-carousel owl-theme sliderTheme">
+                <div>
+                    <img class="sliderImg" src="../../images/image-1.png" />
+                </div>
+                <div>
+                    <img class="sliderImg" src="../../images/image-2.png" />
+                </div>
+                <div>
+                    <img class="sliderImg" src="../../images/image-3.png" />
+                </div>
+            </div>
+            <div class="ImgInnrTxt">
+                <h3 class="planTxt">Plan. Book. <span>Go!</span></h3>
+                <p class="planDetail">
+                    Business travel made effortlessly straightforward.
+                </p>
+            </div>
+            <div class="InnrbottomTxt">
+                <p class="btmTxt">© 2024 Thomascook EVA. All Rights Reserved.</p>
+            </div>
+        </section>
+        <section class="rightBoard col-md-6 col-md-4">
+            <div class="signinInnerContent">
+                <div class="rightSideImg">
+                    <img class="starImg" src="../../images/star-frame.png" alt="">
+                    <img class="flowerFrameImg" src="../../images/flower-frame.png" alt="">
+                    <img class="flowerFrameImg2" src="../../images/flower2-frame.png" alt="">
+                </div>
+                <div class="signinItems">
+                    <div class="signinHeader">
+                        <img class="signinImg" src="../../images/signin-logo.png" alt="" />
+                        <h1 class="loginTxt mb-0">EVA Login</h1>
+                    </div>
+                    <form id="customerLoginForm" method="post" action="#" class="signinFormItems" novalidate="">
+                        <div class="idVerifyOTP">
+                            <h3>Enter the OTP sent to
+                                <span> albertflores@gmail.com</span>
+                            </h3>
+                        </div>
+                        <div class="otpWrapper">
+                            <input type="text" class="otpInput" placeholder="0">
+                            <input type="text" class="otpInput" placeholder="0">
+                            <input type="text" class="otpInput" placeholder="0">
+                            <input type="text" class="otpInput" placeholder="0">
+                        </div>
+                        <div class="checkWrap justify-content-end">
+                            <h3 class="recieveTxt mb-0">Didnt recieve the OTP?</h3>
+                            <a href="#" class="forgotPassTxt mb-0">Resend OTP</a>
+                        </div>
+                        <div class="loginBtns">
+                            <button type="submit" class="loginBtn ">
+                                <a href="otpSuccess.html" class="buttonText">Verify & Proceed</a>
+                            </button>
+                        </div>
+                        <div class="orLine">
+                            <hr class="hrNew">
+                            <h3 class="orTxt mb-0">Or</h3>
+                        </div>
+                        <div class="ssoLoginBtn">
+                            <button type="submit" class="ssoBtn">
+                                <a href="login.html" class="ssoBtnText mb-0">Back to login</a>
+                            </button>
+                            <button type="submit" class="ssoBtn">
+                                <a href="#" class="ssoBtnText mb-0">Login with SSO</a>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        document.querySelectorAll(".otpInput").forEach((element, index, array) => {
+            element.addEventListener("input", function (event) {
+                let inputValue = event.target.value;
+                inputValue = inputValue.replace(/[^0-9]/g, "");
+                inputValue = inputValue.slice(0, 1);
+                event.target.value = inputValue;
+
+                if (inputValue !== "") {
+                    // Move focus to the next input field
+                    if (index < array.length - 1) {
+                        array[index + 1].focus();
+                    }
+                } else {
+                    // Move focus to the previous input field
+                    if (index > 0) {
+                        array[index - 1].focus();
+                    }
+                }
+            });
+
+            // Add a blur event listener to handle cases where the user clicks or tabs away
+            element.addEventListener("blur", function () {
+                // If the input is empty, move focus to the previous input field
+                if (element.value === "" && index > 0) {
+                    array[index - 1].focus();
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

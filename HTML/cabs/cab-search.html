@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cabs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/responsive.css" />
+    <link rel="stylesheet" href="../../js/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../js/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../../js/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="mainheader">
+        <nav class="navbar mb-0">
+            <a href="#" class="nav-logo">
+                <img class="mainLogo" src="../../images/signin-logo.png" alt="" />
+                <h2 class="logoTxt mb-0">EVA</h2>
+            </a>
+            <ul class="navRightSide navMenuH mb-0">
+                <div class="navContainer">
+                    <li class="navItemH ">
+                        <a href="../index.html" class="navLinkH">Dashboard</a>
+                    </li>
+                    <li class="navItemH active">
+                        <a href="../flight-search.html" class="navLinkH">New Booking</a>
+                    </li>
+                    <li class="navItemH">
+                        <a href="../MyTrips/mytrips.html" class="navLinkH">My Trips</a>
+                    </li>
+                    <li class="navItemH">
+                        <a href="../MyApprovals/myapprovals.html" class="navLinkH">Approvals</a>
+                    </li>
+                    <li class="navItemH">
+                        <a href="../TripBox/tripbox.html" class="navLinkH">TripBox</a>
+                    </li>
+                    <li class="navItemH">
+                        <a href="#" class="navLinkH">Analytics </a>
+                    </li>
+                </div>
+            </ul>
+            <div class="layoutToolbarPadding">
+                <div class="navCartCountContainer" onclick="notifyContainer()">
+                    <img class="notifyIcon" src="../../images/Notification.png" alt="" />
+                    <h3 class="cartCount mb-0">4</h3>
+                    <div class="notifyPopupContainer" id="notifyMenu" style="display: none;">
+                        <div class="notificationHeader">
+                            <h3 class="mb-0">Notifications</h3>
+                            <a href="#">Mark all as read</a>
+                        </div>
+                        <div class="notificationListBody">
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <span class="newNotifySpan"></span>
+                                        <img src="../../images/avatar/avatar-1.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">jasneet Manager <span>approved the
+                                                    flight request for Trip
+                                                    ID: 1314267 </span></h3>
+                                            <p class="approveTimeTxt mb-0">Now</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Flight.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <span class="newNotifySpan"></span>
+                                        <img src="../../images/avatar/avatar-2.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">Robert Manager <span>approved the
+                                                    hotel request for Trip
+                                                    ID: 1414245 </span></h3>
+                                            <p class="approveTimeTxt mb-0">6hr ago</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Hotel.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <img src="../../images/avatar/avatar-3.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">Robin Wasiknov<span>approved the trip
+                                                    request for Trip ID:
+                                                    1314267 </span></h3>
+                                            <p class="approveTimeTxt mb-0">Yesterday</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Trip.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <img src="../../images/avatar/avatar-4.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">Alexa Panera<span>approved the bus
+                                                    request for Trip
+                                                    ID: 1314267 </span></h3>
+                                            <p class="approveTimeTxt mb-0">Wed, 15 May, 2024 at 5:31 PM</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Bus.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <img src="../../images/avatar/avatar-2.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">Robert Manager<span>approved the cab
+                                                    request for Trip
+                                                    ID: 1314267 </span></h3>
+                                            <p class="approveTimeTxt mb-0">Wed, 15 May, 2024 at 5:31 PM</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Cab.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <hr class="layoutDivideHr" />
+                </div>
+                <div class="navAccountLink" onclick="profileViewContainer()">
+                    <img src="../../images/user-icon.png" alt="" />
+                    <h3 class="userName mb-0">Albert Flores</h3>
+                    <img id="profileArrow" src="../../images/down-arrow.png" alt="" />
+                </div>
+                <div class="profilePopupContainer" id="profileMenu" style="display: none;">
+                    <div class="myAccountHeading">
+                        <h3 class="mb-0">My Account</h3>
+                    </div>
+                    <div class="profileContainerWrapper">
+                        <ul class="profilInnrContainer px-0 mb-0">
+                            <a href="../profile/profile-emulate.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">Emulate</li>
+                            </a>
+                            <a href="../profile/profile.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">My Profile</li>
+                            </a>
+                            <a href="../profile/profile-change-password.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">Change Password</li>
+                            </a>
+                            <a href="../profile/profile-contact-us.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">Contact Us</li>
+                            </a>
+                            <a href="../profile/profile-feedback.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">Feedbacks</li>
+                            </a>
+                            <a href="../profile/profile-user-manual.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">User manual</li>
+                            </a>
+                            <a href="../Login/login.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h3 class="logoutTxt mb-0">Logout</h3>
+                                        <img src="../../images/icons/logout-profile.svg" alt="">
+                                    </div>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <nav role="navigation" class="hamburger">
+                <div id="menuToggle">
+                    <input type="checkbox" />
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <ul id="hamburgerMenu" class="px-0">
+                        <a href="../index.html">
+                            <li>Dashboard</li>
+                        </a>
+                        <a href="../flight.html">
+                            <li>New Booking</li>
+                        </a>
+                        <a href="../MyTrips/mytrips.html">
+                            <li>My Trips</li>
+                        </a>
+                        <a href="../MyApprovals/myapprovals.html">
+                            <li>Approvals</li>
+                        </a>
+                        <a href="#">
+                            <li>Analytics</li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+        </nav>
+    </header>
+    <section class="dashboardMainContainer">
+        <div class="dashboardBanner">
+            <img class="bannrImg" src="../../images/banner/cab-search-banner.svg" alt="" />
+            <div class="bannrDetail">
+                <div class="bannrInnrLeft">
+                    <h1 class="mrngTxt mb-0">
+                        Hey! where's your <span> next ride?</span>
+                    </h1>
+                    <p class="dataTxt mb-0">
+                        Find and book cabs effortlessly for any destination
+                    </p>
+                </div>
+                <div class="bannrInnrRight">
+                    <div class="locationReport">
+                        <div class="locationSelct1 ">
+                            <img src="../../images/location.png" alt="">
+                        </div>
+                        <div class="locationSelct2">
+                            <select class="locationWrap">
+                                <option value="">New Delhi</option>
+                                <option value="apples">Chennai</option>
+                                <option value="bananas">Bengaluru</option>
+                                <option value="oranges">Mumbai</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="weatherReport border-start ps-3">
+                        <img src="../../images/cloudy-icon.png" alt="">
+                        <p class="degreeTxt mb-0">28° C <span>Cloudy</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="overviewBoxContainer">
+                <div class="overviewInnrContainer flightMainBoxContainer">
+                    <div class="primaryTraveler">
+                        <nav class="toolHeaders">
+                            <ul class="makeFlex headerIconsGap px-0 mb-0">
+                                <li class="menuFlights">
+                                    <a href="../flight-search.html" class="headerIcons border-end flights">
+                                        <div class="bookingNavImg"></div>
+                                        <span class="headerIconTextAlignment  mb-0">
+                                            Flights
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="menuFlights">
+                                    <a href="../hotels/hotel-search.html" class="headerIcons border-end  hotels ">
+                                        <div class="bookingNavImg"></div>
+                                        <span class="headerIconTextAlignment mb-0"> Hotels </span>
+                                    </a>
+                                </li>
+                                <li class="menuFlights">
+                                    <a href="../bus/bus-search.html" class="headerIcons bus">
+                                        <div class="bookingNavImg"></div>
+                                        <span class="headerIconTextAlignment mb-0"> Bus </span>
+                                    </a>
+                                </li>
+                                <li class="menuFlights active">
+                                    <a href="cab-search.html" class="headerIcons cabs">
+                                        <div class="bookingNavImg"></div>
+                                        <span class="headerIconTextAlignment mb-0"> Cabs </span>
+                                    </a>
+                                </li>
+                                <li class="menuFlights">
+                                    <a href="../railway/railway-search.html" class="headerIcons border-end rails">
+                                        <div class="bookingNavImg"></div>
+                                        <span class="headerIconTextAlignment mb-0"> Rail </span>
+                                    </a>
+                                </li>
+                                <li class="menuFlights">
+                                    <a href="../currency/forex-currency-search.html"
+                                        class="headerIcons border-end hrtlCenter currency">
+                                        <div class="bookingNavImg"></div>
+                                        <span class="headerIconTextAlignment mb-0">
+                                            Currency
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="menuFlights">
+                                    <a href="#" class="headerIcons border-end hrtlCenter insurance">
+                                        <div class="bookingNavImg"></div>
+                                        <span class="headerIconTextAlignment mb-0">
+                                            Insurance
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="menuFlights">
+                                    <a href="../visa/visa-search.html" class="headerIcons hrtlCenter visa">
+                                        <div class="bookingNavImg"></div>
+                                        <span class="headerIconTextAlignment mb-0"> Visa </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="selctTripTag">
+                        <div class="radioBtnInnr justify-content-end">
+                            <div class="pushRight">
+                                <select class="">
+                                    <option value="Business Travel">Business Travel</option>
+                                    <option value="Personal Travel">Personal Travel</option>
+                                    <option value="Guest Travel">Guest Travel</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="cabSelctrContainer mt-3 mb-0 col-12 px-0">
+                                <div class="cabSelctrTab pb-2 ">
+                                    <div class="tripType cabSearchSelectrWidth right-bordered px-3 m-0 p-0">
+                                        <div class="fieldInnrBtn">
+                                            <h3 class="mb-0">Trip Type</h3>
+                                            <select class="cabSelectValue" id="#" name="months">
+                                                <option value="#">New Delhi</option>
+                                                <option value="#">Chennai</option>
+                                                <option value="#">Bengaluru</option>
+                                                <option value="#">Mumbai</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="pickupLocation cabSearchSelectrWidth relative right-bordered ps-3 px-3 m-0 p-0">
+                                        <div class="dropdown swipBorder">
+                                            <button class="btn dropdown-toggle btnToggleClip" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <div class="fieldInnrBtn">
+                                                    <h3 class="mb-0">Pickup Location</h3>
+                                                    <!-- id needs to be change -->
+                                                    <input class="inputCity" type="text" name="" id="para1"
+                                                        placeholder="Enter City or Airport1">
+                                                    <!-- This text will open when user select the place -->
+                                                    <div class="stateFrame" id="cityName1" style="display: none;">
+                                                        <h2 class="lrgTxt mb-0" id="para3">Delhi Cantt Railway Station
+                                                        </h2>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                            <ul class="dropdown-menu cityListUL transformCityList px-0">
+                                                <h3 class="airprtTxt mb-0">Popular Places</h3>
+                                                <li>
+                                                    <a class="dropdown-item" href="#" onclick="cityListContent1()">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <span class="fltSwipCircle" onclick="swapFunction()">
+                                                <span>
+                                                    <img class="swipArrowImg" src="../../images/double-arrow.svg"
+                                                        alt="" />
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="dropLocation cabSearchSelectrWidth right-bordered ps-4 m-0 p-0 px-3 ">
+                                        <div class="dropdown">
+                                            <button class="btn dropdown-toggle btnToggleClip" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <div class="fieldInnrBtn">
+                                                    <h3 class="mb-0">Drop Location</h3>
+                                                    <input class="inputCity" type="text" name="" id="para2"
+                                                        placeholder="Enter City or Airport2">
+                                                    <!-- This text will open when user already select the place -->
+                                                    <div class="stateFrame" id="cityName2" style="display: none;">
+                                                        <h2 class="lrgTxt mb-0" id="para4">Delhi Airport(DEL), New Delhi
+                                                        </h2>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                            <ul class="dropdown-menu cityListUL transformCityList px-0">
+                                                <h3 class="airprtTxt mb-0">Popular Places</h3>
+                                                <li>
+                                                    <a class="dropdown-item" href="#" onclick="cityListContent2()">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="fromDate cabSearchSelectrWidth right-bordered m-0 p-0  px-3 ">
+                                        <div class="dropdown">
+                                            <button class="btn dropdown-toggle btnToggleClip" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <div class="fieldInnrBtn">
+                                                    <h3 class="mb-0">From Date</h3>
+                                                    <!-- <div class="flexTab mt-2">
+                                        <h2 class="depatureTxt mb-0">Wed, 15 May</h2>
+                                        <img src="../images/down-angle.svg" alt="" />
+                                      </div> -->
+                                                </div>
+                                            </button>
+                                            <ul class="px-0 mb-0">
+                                                <li>
+                                                    <input class="departureDate" placeholder="dd/mm/yyyy" type="date" />
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="toDate cabSearchSelectrWidth m-0 p-0  px-3 ">
+                                        <div class="dropdown">
+                                            <button class="btn dropdown-toggle btnToggleClip" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <div class="fieldInnrBtn">
+                                                    <h3 class="mb-0">To Date</h3>
+                                                    <!-- <div class="flexTab mt-2">
+                                        <h2 class="depatureTxt mb-0">Wed, 15 May</h2>
+                                        <img src="../images/down-angle.svg" alt="" />
+                                      </div> -->
+                                                </div>
+                                            </button>
+                                            <ul class="px-0 mb-0">
+                                                <li>
+                                                    <input class="departureDate" placeholder="dd/mm/yyyy" type="date" />
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cabSelctrTab border-top pt-3" style="height: 60px;">
+                                    <div class="pickupTime cabSearchSelectrWidth right-bordered px-3 m-0 p-0">
+                                        <div class="fieldInnrBtn">
+                                            <h3 class="mb-0">Pick-Up Time</h3>
+                                            <select class="cabSelectValue">
+                                                <option value="#">05:55</option>
+                                                <option value="#">06:55</option>
+                                                <option value="#">07:55</option>
+                                                <option value="#">08:55</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="cabType cabSearchSelectrWidth relative right-bordered ps-3 px-3 m-0 p-0">
+                                        <div class="fieldInnrBtn">
+                                            <h3 class="mb-0">Cab Type</h3>
+                                            <select class="cabSelectValue" id="#" name="months">
+                                                <option value="#">Dzire, Etios or Similar</option>
+                                                <option value="#">Honda</option>
+                                                <option value="#">Nano</option>
+                                                <option value="#">Ferrari</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="packageType cabSearchSelectrWidth right-bordered ps-4 m-0 p-0 px-3 ">
+                                        <div class="fieldInnrBtn">
+                                            <h3 class="mb-0">Package</h3>
+                                            <select class="cabSelectValue" id="#" name="months">
+                                                <option value="#">Airport transfer</option>
+                                                <option value="#">Airport transfer2</option>
+                                                <option value="#">Airport transfer3</option>
+                                                <option value="#">Airport transfer4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="travellerType cabSearchSelectrWidth  right-bordered  relative m-0 p-0  px-3">
+                                        <div class="dropdown w-100">
+                                            <button
+                                                class="accordion-button collapsed shadow-none border-0 pb-0 accordianArrow w-100"
+                                                type="button" data-bs-toggle="collapse" data-bs-target="#travellerClass"
+                                                aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <div class="fieldInnrBtn w-100">
+                                                        <h3 class="mb-0">Travellers & Class</h3>
+                                                        <div class="flexTab gap-0 mt-2">
+                                                            <h2 class="depatureTxt mb-0">
+                                                                1 Traveller, Premium Economy
+                                                            </h2>
+
+                                                            <span class="arrowIcon position-relative right-0">
+                                                                <img src="../../images/icons/up-arrows_active.svg"
+                                                                    alt="">
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                            </button>
+                                            <ul class="dropdown-menu  transformUL cabDropdownWidth px-0 accordion-collapse collapse "
+                                                id="travellerClass" aria-labelledby="panelsStayOpen-headingOne" style=""
+                                                aria-labelledby="dropdownMenuClickableInside">
+                                                <div class="travelDropDownContainer">
+                                                    <div class="pb-3">
+                                                        <div class="travelDropdownHeader">
+                                                            <h3 class="travellrHeadingTxt mb-0">Traveller</h3>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-toggle="dropdown"
+                                                                onclick="closeDropdown()"></button>
+                                                        </div>
+                                                        <div class="fltTravellers d-flex mt-3">
+                                                            <div class="adultRange d-flex align-items-center gap-5 col">
+                                                                <div class="rangeTxt">
+                                                                    <h4 class="mb-0">Passengers</h4>
+                                                                </div>
+                                                                <div class="gbCounter">
+                                                                    <button
+                                                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                                        class="minus"><img
+                                                                            src="../../images/gray-minus.svg"
+                                                                            alt=""></button>
+                                                                    <input class="quantity rangeCounter" min="0"
+                                                                        name="quantity" value="1" type="number">
+                                                                    <button
+                                                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                                        class="plus"><img
+                                                                            src="../../images/gray-plus.svg"
+                                                                            alt=""></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="chooseTravelClass mt-3">
+                                                            <h3 class="travellrHeadingTxt mb-2">Add Corporate Travellers
+                                                            </h3>
+                                                            <div class="corporateUserContainer mt-3">
+                                                                <div class="hotelUserHeader">
+                                                                    <img src="../../images/placeholderImg.png" alt="">
+                                                                    <p class="mb-0">albert Flores
+                                                                        <span>(albertflores@gmail.com)</span>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="userSelctBody">
+                                                                    <select class="employeeProfileBody">
+                                                                        <option selected="">Search and add traveller
+                                                                        </option>
+                                                                        <option value="1">One</option>
+                                                                        <option value="2">Two</option>
+                                                                        <option value="3">Three</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                    <div class=" cabSearchSelectrWidth ps-4 m-0 p-0 px-3 ">
+                                        <div class="fieldInnrBtn">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cabSelctrContainer mt-3 mb-0 col-12 px-0" id="addMoreCabs"
+                                style="display: none;">
+                                <div class="cabSelctrTab pb-2 ">
+                                    <div class="tripType cabSearchSelectrWidth right-bordered px-3 m-0 p-0">
+                                        <div class="fieldInnrBtn">
+                                            <h3 class="mb-0">Trip Type</h3>
+                                            <select class="cabSelectValue" id="#" name="months">
+                                                <option value="#">New Delhi</option>
+                                                <option value="#">Chennai</option>
+                                                <option value="#">Bengaluru</option>
+                                                <option value="#">Mumbai</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="pickupLocation cabSearchSelectrWidth relative right-bordered ps-3 px-3 m-0 p-0">
+                                        <div class="dropdown swipBorder">
+                                            <button class="btn dropdown-toggle btnToggleClip" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <div class="fieldInnrBtn">
+                                                    <h3 class="mb-0">Pickup Location</h3>
+                                                    <!-- id needs to be change -->
+                                                    <p class="mb-0 mt-2" id="para1">Enter City or Airport</p>
+                                                    <!-- This text will open when user select the place -->
+                                                    <!-- <div class="stateFrame">
+                                                    <h2 class="smallTxt mb-0" id="para1">DEL</h2>
+                                                    <h2 class="lrgTxt mb-0" id="para3">- New Delhi</h2>
+                                                </div> -->
+                                                </div>
+                                            </button>
+                                            <ul class="dropdown-menu cityListUL transformCityList px-0">
+                                                <h3 class="airprtTxt mb-0">Popular Places</h3>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <span class="fltSwipCircle" onclick="swapFunction()">
+                                                <span>
+                                                    <img class="swipArrowImg" src="../../images/double-arrow.svg"
+                                                        alt="" />
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="dropLocation cabSearchSelectrWidth right-bordered ps-4 m-0 p-0 px-3 ">
+                                        <div class="dropdown">
+                                            <button class="btn dropdown-toggle btnToggleClip" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <div class="fieldInnrBtn">
+                                                    <h3 class="mb-0">Drop Location</h3>
+                                                    <p class="mb-0 mt-2" id="para2">Enter City or Airport2</p>
+                                                    <!-- This text will open when user already select the place -->
+                                                    <!-- <div class="stateFrame">
+                                                    <h2 class="smallTxt mb-0" id="para2">BOM</h2>
+                                                    <h2 class="lrgTxt mb-0" id="para4">- Mumbai</h2>
+                                                </div> -->
+                                                </div>
+                                            </button>
+                                            <ul class="dropdown-menu cityListUL transformCityList px-0">
+                                                <h3 class="airprtTxt mb-0">Popular Places</h3>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div class="listDiv">
+                                                            <div class="div1">
+                                                                <h3 class="autoCompleteSubTitle mb-0">
+                                                                    <img src="../../images/icons/building.svg" alt="">
+                                                                </h3>
+                                                                <div>
+                                                                    <h4 class="autoCompleteTitle mb-0">
+                                                                        New Delhi, Delhi, India
+                                                                    </h4>
+                                                                    <p class="airprortNameTitle mb-0">
+                                                                        City
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="div2">
+                                                                <img src="../../images/India (IN).png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="fromDate cabSearchSelectrWidth right-bordered m-0 p-0  px-3 ">
+                                        <div class="dropdown">
+                                            <button class="btn dropdown-toggle btnToggleClip" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <div class="fieldInnrBtn">
+                                                    <h3 class="mb-0">From Date</h3>
+                                                    <!-- <div class="flexTab mt-2">
+                                        <h2 class="depatureTxt mb-0">Wed, 15 May</h2>
+                                        <img src="../images/down-angle.svg" alt="" />
+                                      </div> -->
+                                                </div>
+                                            </button>
+                                            <ul class="px-0 mb-0">
+                                                <li>
+                                                    <input class="departureDate" placeholder="dd/mm/yyyy" type="date" />
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="toDate cabSearchSelectrWidth m-0 p-0  px-3 ">
+                                        <div class="dropdown">
+                                            <button class="btn dropdown-toggle btnToggleClip" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <div class="fieldInnrBtn">
+                                                    <h3 class="mb-0">To Date</h3>
+                                                    <!-- <div class="flexTab mt-2">
+                                        <h2 class="depatureTxt mb-0">Wed, 15 May</h2>
+                                        <img src="../images/down-angle.svg" alt="" />
+                                      </div> -->
+                                                </div>
+                                            </button>
+                                            <ul class="px-0 mb-0">
+                                                <li>
+                                                    <input class="departureDate" placeholder="dd/mm/yyyy" type="date" />
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cabSelctrTab border-top pt-3" style="height: 60px;">
+                                    <div class="pickupTime cabSearchSelectrWidth right-bordered px-3 m-0 p-0">
+                                        <div class="fieldInnrBtn">
+                                            <h3 class="mb-0">Pick-Up Time</h3>
+                                            <select class="cabSelectValue" id="#" name="months">
+                                                <option value="#">New Delhi</option>
+                                                <option value="#">Chennai</option>
+                                                <option value="#">Bengaluru</option>
+                                                <option value="#">Mumbai</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="cabType cabSearchSelectrWidth relative right-bordered ps-3 px-3 m-0 p-0">
+                                        <div class="fieldInnrBtn">
+                                            <h3 class="mb-0">Cab Type</h3>
+                                            <select class="cabSelectValue" id="#" name="months">
+                                                <option value="#">New Delhi</option>
+                                                <option value="#">Chennai</option>
+                                                <option value="#">Bengaluru</option>
+                                                <option value="#">Mumbai</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="packageType cabSearchSelectrWidth right-bordered ps-4 m-0 p-0 px-3 ">
+                                        <div class="fieldInnrBtn">
+                                            <h3 class="mb-0">Package</h3>
+                                            <select class="cabSelectValue" id="#" name="months">
+                                                <option value="#">New Delhi</option>
+                                                <option value="#">Chennai</option>
+                                                <option value="#">Bengaluru</option>
+                                                <option value="#">Mumbai</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="travellerType cabSearchSelectrWidth right-bordered m-0 p-0  px-3 ">
+                                        <div class="fieldInnrBtn">
+                                            <h3 class="mb-0">Traveller</h3>
+                                            <select class="cabSelectValue" id="#" name="months">
+                                                <option value="#">New Delhi</option>
+                                                <option value="#">Chennai</option>
+                                                <option value="#">Bengaluru</option>
+                                                <option value="#">Mumbai</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="travellerClass d-flex cabSearchSelectrWidth  relative px-3 m-0 p-0 ">
+                                        <div class="d-flex align-items-center gap-2" style="cursor: pointer;">
+                                            <img src="../../images/Delete.png" alt="" />
+                                            <h3 class="removeTxt mb-0">Remove</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="addMoreFlightBtn mt-3 padding20">
+                                <button class="flightBtn justify-content-center" style="max-width: 150px;"
+                                    onclick="addMoreCabs()">
+                                    <img src="../../images/add.png" alt="">
+                                    <span class="addMoreTxt">Add More</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proceedOfflineBtns mt-5">
+                        <a href="../proceed-form1.html" class="proceedBtn mb-0"><span>Proceed Offline</span></a>
+
+                        <a href="#" class="searchOnlineBtn" data-bs-toggle="modal" data-bs-target="#loaderModal">
+                            <img src="../../images/Search.png" alt="" />
+                            <span class="mb-0">Search Online</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dashboardBody">
+            <div class="travelAdvertWrapper" id="travelAdvertWrapper">
+                <div class="guidelineContnt col">
+                    <h3 class="actionTxt mb-2">Travel Guidelines</h3>
+                    <img class="guidelineImg" src="../../images/travel-guideline.png" alt="" />
+                </div>
+                <div class="advertContnt col">
+                    <h3 class="actionTxt mb-2">Advertisement</h3>
+                    <img class="advrtImg" src="../../images/travel-advertis.png" alt="" />
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- when you click on proceed button which is open when you selct the fare type this pop up will open -->
+    <!-- Modal -->
+    <div class="modal fade blurBackdrop" id="loaderModal" tabindex="-1" aria-labelledby="loaderModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <div class="modalHeader">
+                        <img class="busloaderImg" src="../../images/icons/bus-loader.svg" alt="">
+                        <img class="polygonImg" src="../../images/Polygon2.svg" alt="">
+                    </div>
+                    <div class="modalInnrContent">
+                        <div class="journTxts">
+                            <h2 class="mb-0">Prepping Your Journey!</h2>
+                            <p class="mb-0">Getting everything set for your travel experience. Hold tight</p>
+                        </div>
+                        <div class="chngeSearchContnt">
+                            <a href="#">Change Search</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

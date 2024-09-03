@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/responsive.css" />
+    <link rel="stylesheet" href="../../js/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../../js/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../../js/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="mainheader">
+        <nav class="navbar mb-0">
+            <a href="#" class="nav-logo">
+                <img class="mainLogo" src="../../images/signin-logo.png" alt="" />
+                <h2 class="logoTxt mb-0">EVA</h2>
+            </a>
+            <ul class="navRightSide navMenuH mb-0">
+                <div class="navContainer">
+                    <li class="navItemH ">
+                        <a href="../index.html" class="navLinkH">Dashboard</a>
+                    </li>
+                    <li class="navItemH active">
+                        <a href="../flight-search.html" class="navLinkH">New Booking</a>
+                    </li>
+                    <li class="navItemH">
+                        <a href="../MyTrips/mytrips.html" class="navLinkH">My Trips</a>
+                    </li>
+                    <li class="navItemH">
+                        <a href="../MyApprovals/myapprovals.html" class="navLinkH">Approvals</a>
+                    </li>
+                    <li class="navItemH">
+                        <a href="../TripBox/tripbox.html" class="navLinkH">TripBox</a>
+                    </li>
+                    <li class="navItemH">
+                        <a href="#" class="navLinkH">Analytics </a>
+                    </li>
+                </div>
+            </ul>
+            <div class="layoutToolbarPadding">
+                <div class="navCartCountContainer" onclick="notifyContainer()">
+                    <img class="notifyIcon" src="../../images/Notification.png" alt="" />
+                    <h3 class="cartCount mb-0">4</h3>
+                    <div class="notifyPopupContainer" id="notifyMenu" style="display: none;">
+                        <div class="notificationHeader">
+                            <h3 class="mb-0">Notifications</h3>
+                            <a href="#">Mark all as read</a>
+                        </div>
+                        <div class="notificationListBody">
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <span class="newNotifySpan"></span>
+                                        <img src="../../images/avatar/avatar-1.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">jasneet Manager <span>approved the
+                                                    flight request for Trip
+                                                    ID: 1314267 </span></h3>
+                                            <p class="approveTimeTxt mb-0">Now</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Flight.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <span class="newNotifySpan"></span>
+                                        <img src="../../images/avatar/avatar-2.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">Robert Manager <span>approved the
+                                                    hotel request for Trip
+                                                    ID: 1414245 </span></h3>
+                                            <p class="approveTimeTxt mb-0">6hr ago</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Hotel.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <img src="../../images/avatar/avatar-3.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">Robin Wasiknov<span>approved the trip
+                                                    request for Trip ID:
+                                                    1314267 </span></h3>
+                                            <p class="approveTimeTxt mb-0">Yesterday</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Trip.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <img src="../../images/avatar/avatar-4.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">Alexa Panera<span>approved the bus
+                                                    request for Trip
+                                                    ID: 1314267 </span></h3>
+                                            <p class="approveTimeTxt mb-0">Wed, 15 May, 2024 at 5:31 PM</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Bus.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <img src="../../images/avatar/avatar-2.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">Robert Manager<span>approved the cab
+                                                    request for Trip
+                                                    ID: 1314267 </span></h3>
+                                            <p class="approveTimeTxt mb-0">Wed, 15 May, 2024 at 5:31 PM</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Cab.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <hr class="layoutDivideHr" />
+                </div>
+                <div class="navAccountLink" onclick="profileViewContainer()">
+                    <img src="../../images/user-icon.png" alt="" />
+                    <h3 class="userName mb-0">Albert Flores</h3>
+                    <img id="profileArrow" src="../../images/down-arrow.png" alt="" />
+                </div>
+                <div class="profilePopupContainer" id="profileMenu" style="display: none;">
+                    <div class="myAccountHeading">
+                        <h3 class="mb-0">My Account</h3>
+                    </div>
+                    <div class="profileContainerWrapper">
+                        <ul class="profilInnrContainer px-0 mb-0">
+                            <a href="../profile/profile-emulate.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">Emulate</li>
+                            </a>
+                            <a href="../profile/profile.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">My Profile</li>
+                            </a>
+                            <a href="../profile/profile-change-password.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">Change Password</li>
+                            </a>
+                            <a href="../profile/profile-contact-us.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">Contact Us</li>
+                            </a>
+                            <a href="../profile/profile-feedback.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">Feedbacks</li>
+                            </a>
+                            <a href="../profile/profile-user-manual.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">User manual</li>
+                            </a>
+                            <a href="../Login/login.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h3 class="logoutTxt mb-0">Logout</h3>
+                                        <img src="../../images/icons/logout-profile.svg" alt="">
+                                    </div>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <nav role="navigation" class="hamburger">
+                <div id="menuToggle">
+                    <input type="checkbox" />
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <ul id="hamburgerMenu" class="px-0">
+                        <a href="../index.html">
+                            <li>Dashboard</li>
+                        </a>
+                        <a href="../flight-search.html">
+                            <li>New Booking</li>
+                        </a>
+                        <a href="../MyTrips/mytrips.html">
+                            <li>My Trips</li>
+                        </a>
+                        <a href="../MyApprovals/myapprovals.html">
+                            <li>Approvals</li>
+                        </a>
+                        <a href="#">
+                            <li>Analytics</li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+        </nav>
+    </header>
+    <section class="dashboardMainContainer">
+        <div class="dashboardBanner">
+            <img class="w-100 bannrImg" src="../../images/banner/multiservice-banner.svg" alt="" />
+            <div class="bannrDetail">
+                <div class="bannrInnrLeft">
+                    <h1 class="mrngTxt mb-0">
+                        Multi-Service <span>Travel Maestro</span>
+                    </h1>
+                    <p class="dataTxt mb-0">
+                        Create your travel journey & book multiple services with ease, all in one place!
+                    </p>
+                </div>
+                <div class="bannrInnrRight">
+                    <div class="locationReport">
+                        <div class="locationSelct1 ">
+                            <img src="../../images/location.png" alt="" />
+                        </div>
+                        <div class="locationSelct2">
+                            <select class="locationWrap">
+                                <option value="">New Delhi</option>
+                                <option value="apples">Chennai</option>
+                                <option value="bananas">Bengaluru</option>
+                                <option value="oranges">Mumbai</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="weatherReport border-start ps-3">
+                        <img src="../../images/cloudy-icon.png" alt="" />
+                        <p class="degreeTxt mb-0">28&deg; C <span>Cloudy</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="overviewBoxContainer" style="padding-bottom: 50px;">
+                <div class="multiserviceBoxContainer">
+                    <div class="multiServiceInnrWrapper">
+                        <div class="form1 border-bottom pb-4">
+                            <h2 class="multiserviceFormHeading">Company Details</h2>
+                            <h4 class="entTitle mt-0 mb-0">
+                                (This information is extremely important for your organisation reporting requirement.
+                                Please
+                                ensure that all details are updated correctly)
+                            </h4>
+                            <div class="passengerForm mt-3">
+                                <form action="#" class="">
+                                    <div class="passngrformBody p-0">
+                                        <div class="formMainDiv">
+                                            <div class="formInnrDiv col">
+                                                <label for="">Company Name</label>
+                                                <input type="text" class="form-control activeInputFormControl"
+                                                    placeholder="Royal Enfield">
+                                            </div>
+                                            <div class="formInnrDiv col">
+                                                <label for="">Traveler <span>*</span></label>
+                                                <img class="selctArrowIcon" src="../../images/down-angle.svg" alt="">
+                                                <select class="">
+                                                    <option value="">Albert flores</option>
+                                                    <option value="apples">John</option>
+                                                    <option value="bananas">Admin</option>
+                                                    <option value="oranges">User</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="form2 border-bottom pb-4">
+                            <h2 class="multiserviceFormHeading">Trip Details</h2>
+                            <h4 class="entTitle mt-0 mb-0">
+                                (This information is extremely important for your organisation reporting requirement.
+                                Please
+                                ensure that all details are updated correctly)
+                            </h4>
+                            <div class="passengerForm mt-3">
+                                <form action="#" class="">
+                                    <div class="radioBtnInnr">
+                                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link navTripBtns active border-0 p-0"
+                                                    id="pills-secure-tab" data-bs-toggle="pill"
+                                                    data-bs-target="#pills-secure" type="button" role="tab"
+                                                    aria-controls="pills-secure" aria-selected="true">
+                                                    <input id="radio-1" class="specifyColor" name="radio" type="radio"
+                                                        checked="checked">
+                                                    <label for="radio-1" class="travelLabel">Domestic Travel </label>
+                                                </button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link navTripBtns border-0 p-0 ps-5"
+                                                    id="pills-risk-tab" data-bs-toggle="pill"
+                                                    data-bs-target="#pills-risk" type="button" role="tab"
+                                                    aria-controls="pills-risk" aria-selected="false" tabindex="-1">
+                                                    <input id="radio-2" class="specifyColor" name="radio" type="radio">
+                                                    <label for="radio-2" class="travelLabel">International
+                                                        Travel</label>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content px-0 py-0" id="pills-tabContent">
+                                        <div class="tab-pane fade show active" id="pills-secure" role="tabpanel"
+                                            aria-labelledby="pills-secure-tab" tabindex="0">
+                                            <div class="passengerForm mt-3">
+                                                <form action="#" class="">
+                                                    <div class="passngrformBody d-flex flex-column gap-4 p-0">
+                                                        <div class="formMainDiv">
+                                                            <div class="formInnrDiv col-md-10 col-12">
+                                                                <label for="">Trip Name *</label>
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="Trip Escapade">
+                                                            </div>
+                                                            <div class="formInnrDiv col">
+                                                                <label for="">Travel Type</label>
+                                                                <select class="">
+                                                                    <option value="Business Travel">Business Travel
+                                                                    </option>
+                                                                    <option value="Personal Travel">Personal Travel
+                                                                    </option>
+                                                                    <option value="Guest Travel">Guest Travel</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="formMainDiv">
+                                                            <div class="formInnrDiv col-md-3 col-12">
+                                                                <label for="">Start date <span>*</span></label>
+                                                                <input class="dobLabel" placeholder="dd/mm/yyyy"
+                                                                    type="date">
+                                                            </div>
+                                                            <div class="formInnrDiv col-md-3 col-12">
+                                                                <label for="">End Date<span>*</span></label>
+                                                                <input class="dobLabel" placeholder="dd/mm/yyyy"
+                                                                    type="date">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="form3 border-bottom pb-4">
+                            <h2 class="multiserviceFormHeading">Billing Entity</h2>
+                            <h4 class="entTitle mt-0 mb-0">
+                                (This information is extremely important for your organisation reporting requirement.
+                                Please
+                                ensure that all details are updated correctly)
+                            </h4>
+                            <div class="passengerForm mt-3">
+                                <form action="#" class="">
+                                    <div class="passngrformBody d-flex flex-column gap-4 p-0">
+                                        <div class="formMainDiv">
+                                            <div class="formInnrDiv col">
+                                                <label for="">Legal entity name</label>
+                                                <input type="text" class="form-control activeInputFormControl"
+                                                    placeholder="[432198] Demo Company- Implementation">
+                                            </div>
+                                            <div class="formInnrDiv col">
+                                                <label for="">Billing Entity<span>*</span></label>
+                                                <select class="">
+                                                    <option value="">[432198] Demo Company- Implementation</option>
+                                                    <option value="">[432199] H1 Company- Implementation</option>
+                                                    <option value="">[432197] H2 Company- Implementation</option>
+                                                    <option value="">[432196] H3 Company- Implementation</option>
+                                                </select>
+                                            </div>
+                                            <div class="formInnrDiv col">
+                                                <label for="">Billable/Non Billable <span>*</span></label>
+                                                <select class="">
+                                                    <option value="">Client Meeting</option>
+                                                    <option value="">Client Meeting2</option>
+                                                    <option value="">Client Meeting3</option>
+                                                    <option value="">Client Meeting4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="formMainDiv">
+                                            <div class="formInnrDiv col">
+                                                <label for="">Reason for travel</label>
+                                                <input type="text" class="form-control" placeholder="Client Meeting">
+                                            </div>
+                                            <div class="formInnrDiv col">
+                                                <label for="">Additional remarks</label>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Write remarks if any">
+                                            </div>
+                                            <div class="formInnrDiv col">
+                                                <label for="">Engagement Type <span>*</span></label>
+                                                <select class="">
+                                                    <option value="">Select</option>
+                                                    <option value="">Select2</option>
+                                                    <option value="">Select3</option>
+                                                    <option value="">Select4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="form4">
+                            <h2 class="multiserviceFormHeading">Passenger Details</h2>
+                            <h4 class="entTitle mt-0 mb-0">
+                                (Please enter passenger names as per Government ID)
+                            </h4>
+                            <div class="fltTravellers passngerAge d-flex justify-content-between">
+                                <div class="adultRange rangeFlex d-flex gap-4">
+                                    <div class=" rangeTxt ageInrWrap">
+                                        <h4 class="mb-0">Adults</h4>
+                                        <p class="mb-0">(Aged 12+ yrs)</p>
+                                    </div>
+                                    <div class="gbCounter bgWhite">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                            class="minus"><img src="../../images/gray-minus.svg" alt=""></button>
+                                        <input class="quantity rangeCounter" min="0" name="quantity" value="1"
+                                            type="number">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                            class="plus"><img src="../../images/gray-plus.svg" alt=""></button>
+                                    </div>
+                                </div>
+                                <div class="childrenRange rangeFlex d-flex gap-3 ">
+                                    <div class="rangeTxt ageInrWrap">
+                                        <h4 class="mb-0">Children</h4>
+                                        <p class="mb-0">(Aged 2-12 yrs)</p>
+                                    </div>
+                                    <div class="gbCounter bgWhite">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                            class="minus"><img src="../../images/gray-minus.svg" alt=""></button>
+                                        <input class="quantity rangeCounter" min="0" name="quantity" value="1"
+                                            type="number">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                            class="plus"><img src="../../images/gray-plus.svg" alt=""></button>
+                                    </div>
+                                </div>
+                                <div class="infantRange rangeFlex d-flex gap-3">
+                                    <div class="rangeTxt ageInrWrap">
+                                        <h4 class="mb-0">Infants</h4>
+                                        <p class="mb-0">(Below 2 yrs)</p>
+                                    </div>
+                                    <div class="gbCounter bgWhite">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                            class="minus"><img src="../../images/gray-minus.svg" alt=""></button>
+                                        <input class="quantity rangeCounter" min="0" name="quantity" value="1"
+                                            type="number">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                            class="plus"><img src="../../images/gray-plus.svg" alt=""></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="passengerForm mt-3">
+                                <form action="#" class="passengerFormInnr">
+                                    <div class="passngrformHeader" style="border-radius: 6px 6px 0px 0px;">
+                                        <div class="d-flex gap-4 flex-wrap">
+                                            <div class="psTitle">
+                                                <img src="../../images/placeholderImg.png" alt="">
+                                                <h4 class="mb-0">Adult 1:</h4>
+                                            </div>
+                                            <div class="psInput">
+                                                <input class="empTitleInput form-control" type="text"
+                                                    placeholder="Employee">
+                                                <input class="empNameInput form-control" type="text"
+                                                    placeholder="Albert Flores">
+                                            </div>
+                                        </div>
+                                        <div class="hideDetails">
+                                            <a href="#" onclick="hideDetails()">Hide Details</a>
+                                        </div>
+                                    </div>
+                                    <div class="" id="myDip">
+                                        <div class="passngrformBody pasngrInfoDetail">
+                                            <div class="formMainDiv">
+                                                <div class="formInnrDiv col-md-3 col-12">
+                                                    <label for="">Title <span>*</span></label>
+                                                    <select class="">
+                                                        <option value="">Mr.</option>
+                                                        <option value="">Mrs.</option>
+                                                        <option value="">Miss</option>
+                                                    </select>
+                                                </div>
+                                                <div class="formInnrDiv col">
+                                                    <label for="">First Name <span> *</span></label>
+                                                    <input type="text" class="form-control" placeholder="Albert">
+                                                </div>
+                                                <div class="formInnrDiv col">
+                                                    <label for="">Last Name <span>*</span></label>
+                                                    <input type="text" class="form-control" placeholder="Flores">
+                                                </div>
+                                            </div>
+                                            <div class="formMainDiv mt-3">
+                                                <div class="formInnrDiv col-md-3 col-12">
+                                                    <label for="">Country Code <span>*</span></label>
+                                                    <select class="">
+                                                        <option value="">IND | +91</option>
+                                                        <option value="apples">IND | +912</option>
+                                                        <option value="bananas">IND | +914</option>
+                                                        <option value="oranges">IND | +916</option>
+                                                    </select>
+                                                </div>
+                                                <div class="formInnrDiv col">
+                                                    <label for="">Mobile Number <span> *</span></label>
+                                                    <input type="text" class="form-control" placeholder="9999999">
+                                                </div>
+                                                <div class="formInnrDiv col">
+                                                    <label for="">Email ID<span>*</span></label>
+                                                    <input class="formInnrDivSelct form-control activeInputFormControl"
+                                                        type="email" placeholder="albert.flores@gmail.com">
+                                                </div>
+                                            </div>
+                                            <div class="formMainDiv mt-3">
+                                                <div class="formInnrDiv col-md-3 col-12">
+                                                    <label for="">Date of Birth <span>*</span></label>
+                                                    <input class="dobLabel" placeholder="dd/mm/yyyy" type="date">
+                                                </div>
+                                                <div class="formInnrDiv col-md-4 col">
+                                                    <label for="">Frequent Flyer Number<span>
+                                                            *</span></label>
+                                                    <input type="text" class="form-control" placeholder="0">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="passngrformBody accordion-item border-0">
+                                        <button class="accordion-button collapsed shadow-none border-0 accordianArrow"
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                                            aria-controls="panelsStayOpen-collapseOne" style="padding: 20px 20px 0px;">
+                                            <div class="w-100 d-flex justify-content-between mb-2">
+                                                <h3 class="orgDetailTxt mb-0">
+                                                    Organisation details
+                                                    <span class="arrowIcon" style="right: 0;">
+                                                        <img src="../../images/icons/up-arrows_active.svg" alt="">
+                                                    </span>
+                                                </h3>
+
+                                            </div>
+                                        </button>
+                                        </h2>
+                                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse "
+                                            aria-labelledby="panelsStayOpen-headingOne" style="padding: 0 20px 20px;">
+                                            <div class="accordion-body">
+                                                <h4 class="entTitle mt-0">
+                                                    (Please enter passenger names as per Government
+                                                    ID)
+                                                </h4>
+                                                <div class="formMainDiv">
+                                                    <div class="formInnrDiv col">
+                                                        <label for="">Business Unit</label>
+                                                        <select class="">
+                                                            <option value="">Marketing Team</option>
+                                                            <option value="">Marketing Team1</option>
+                                                            <option value="">Marketing Team2</option>
+                                                            <option value="">Marketing Team3</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="formInnrDiv col">
+                                                        <label for="">Cost Centre <span> *</span></label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="TM00589372" />
+                                                    </div>
+                                                    <div class="formInnrDiv col">
+                                                        <label for="">Employee Code <span>*</span></label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="AF123210" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </form>
+                            </div>
+                            <div class="passengerForm mt-3">
+                                <form action="#" class="passengerFormInnr">
+                                    <div class="passngrformHeader" style="border-radius: 6px 6px 0px 0px;">
+                                        <div class="d-flex flex-wrap gap-4 w-100">
+                                            <div class="psTitle">
+                                                <img src="../../images/placeholderImg.png" alt="">
+                                                <h4 class="mb-0">Child:</h4>
+                                            </div>
+                                            <div class="psInput col-md-10 col-12">
+                                                <div class="selectInputWrapContainer">
+                                                    <select class="selctWrap1">
+                                                        <option value="">Employee</option>
+                                                        <option value="">Employee2</option>
+                                                        <option value="">Employee3</option>
+                                                        <option value="">Employee4</option>
+                                                    </select>
+                                                    <select class="selctWrap2">
+                                                        <option value="">
+                                                            Select family profile</option>
+                                                        <option value="">profile2</option>
+                                                        <option value="">profile3</option>
+                                                        <option value="">profile4</option>
+                                                    </select>
+                                                    <div class="deleteImg mb-0">
+                                                        <img src="../../images/Delete.png" alt="" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="hideDetails">
+                                            <a href="#" onclick="hideChildDetails()">Hide Details</a>
+                                        </div>
+                                    </div>
+                                    <div class="" id="myDip1">
+                                        <div class="passngrformBody pasngrInfoDetail">
+                                            <div class="formMainDiv">
+                                                <div class="formInnrDiv col-md-3 col-12">
+                                                    <label for="">Title <span>*</span></label>
+                                                    <select class="">
+                                                        <option value="">Mr.</option>
+                                                        <option value="">Mrs.</option>
+                                                        <option value="">Miss</option>
+                                                    </select>
+                                                </div>
+                                                <div class="formInnrDiv col">
+                                                    <label for="">First Name <span> *</span></label>
+                                                    <input type="text" class="form-control" placeholder="Albert">
+                                                </div>
+                                                <div class="formInnrDiv col">
+                                                    <label for="">Last Name <span>*</span></label>
+                                                    <input type="text" class="form-control" placeholder="Flores">
+                                                </div>
+                                            </div>
+                                            <div class="formMainDiv mt-3">
+                                                <div class="formInnrDiv col-md-3 col-12">
+                                                    <label for="">Country Code <span>*</span></label>
+                                                    <select class="">
+                                                        <option value="">IND | +91</option>
+                                                        <option value="apples">IND | +912</option>
+                                                        <option value="bananas">IND | +914</option>
+                                                        <option value="oranges">IND | +916</option>
+                                                    </select>
+                                                </div>
+                                                <div class="formInnrDiv col">
+                                                    <label for="">Mobile Number <span> *</span></label>
+                                                    <input type="text" class="form-control" placeholder="9999999">
+                                                </div>
+                                                <div class="formInnrDiv col">
+                                                    <label for="">Email ID<span>*</span></label>
+                                                    <input class="formInnrDivSelct form-control activeInputFormControl"
+                                                        type="email" placeholder="albert.flores@gmail.com">
+                                                </div>
+                                            </div>
+                                            <div class="formMainDiv mt-3">
+                                                <div class="formInnrDiv col-md-3 col-12">
+                                                    <label for="">Date of Birth <span>*</span></label>
+                                                    <input class="dobLabel" placeholder="dd/mm/yyyy" type="date">
+                                                </div>
+                                                <div class="formInnrDiv col-md-4 col">
+                                                    <label for="">Frequent Flyer Number<span>
+                                                            *</span></label>
+                                                    <input type="text" class="form-control" placeholder="0">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- -->
+    </section>
+    <div class="proceedCardWrapper">
+        <div class="proceedCardInnr">
+            <div class="proceedShareBtns tripAddedBtns">
+                <div class="proceedOfflineBtns justify-content-end w-100" style="margin: 0px">
+                    <a href="#" class="proceedBtn" data-bs-toggle="modal" data-bs-target="#warningPopupModal"><span
+                            class="mb-0">Cancel Trip</span></a>
+
+                    <a href="../flight-search2.html" class="searchOnlineBtn">
+                        <img src="../../images/icons/white-cart-icon.svg" alt="">
+                        <span class="mb-0">Add services</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- when you click on proceed button which is open when you selct the fare type this pop up will open -->
+    <!-- Modal -->
+    <div class="modal fade blurBackdrop warningPopupContainer" id="warningPopupModal" tabindex="-1"
+        aria-labelledby="warningPopupModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <div class="modalHeader">
+                        <img class="loaderImg" src="../../images/optimize-img.svg" alt="">
+                        <img class="polygonImg" src="../../images/Polygon2.svg" alt="">
+                    </div>
+                    <div class="modalInnrContent">
+                        <div class="journTxts">
+                            <h2 class="mb-0">Change of Plans!</h2>
+                            <p class="mb-0" style="width: 100%; max-width: 820px;">Are you sure you want to exit the
+                                Multi-Service Travel Maestro? <strong>Your
+                                    Trip ID
+                                    : 790794</strong> is in progress.
+                                All the details will be saved in Tripbox and you can always come back to this step.</p>
+                        </div>
+                        <div class="proceedOfflineBtns tripAddedBtns" data-bs-target="#exampleModalToggle2"
+                            data-bs-toggle="modal" style="margin: 0px; width: 100%">
+                            <a href="#" class="proceedBtn"><span>Continue Editing</span></a>
+
+                            <a href="../index.html" class="searchOnlineBtn prBtn">
+                                <span>Yes, Exit</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="crossImg">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <img src="../../images/Cancel-popup.svg" alt="" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

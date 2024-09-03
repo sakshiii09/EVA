@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cab Booking Done</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/responsive.css" />
+    <link rel="stylesheet" href="../../js/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../../js/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../../js/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="mainheader  activeHeader" style="background: rgba(3, 78, 162, 0.75)">
+        <nav class="navbar mb-0">
+            <a href="#" class="nav-logo">
+                <img class="mainLogo" src="../../images/signin-logo.png" alt="" />
+                <h2 class="logoTxt mb-0">EVA</h2>
+            </a>
+            <ul class="navRightSide navMenuH mb-0">
+                <div class="navContainer">
+                    <li class="navItemH ">
+                        <a href="../index.html" class="navLinkH">Dashboard</a>
+                    </li>
+                    <li class="navItemH active">
+                        <a href="../flight-search.html" class="navLinkH">New Booking</a>
+                    </li>
+                    <li class="navItemH">
+                        <a href="../MyTrips/mytrips.html" class="navLinkH">My Trips</a>
+                    </li>
+                    <li class="navItemH">
+                        <a href="../MyApprovals/myapprovals.html" class="navLinkH">Approvals</a>
+                    </li>
+                    <li class="navItemH">
+                        <a href="../TripBox/tripbox.html" class="navLinkH">TripBox</a>
+                    </li>
+                    <li class="navItemH">
+                        <a href="#" class="navLinkH">Analytics </a>
+                    </li>
+                </div>
+            </ul>
+            <div class="layoutToolbarPadding">
+                <div class="navCartCountContainer" onclick="notifyContainer()">
+                    <img class="notifyIcon" src="../../images/Notification.png" alt="" />
+                    <h3 class="cartCount mb-0">4</h3>
+                    <div class="notifyPopupContainer" id="notifyMenu" style="display: none;">
+                        <div class="notificationHeader">
+                            <h3 class="mb-0">Notifications</h3>
+                            <a href="#">Mark all as read</a>
+                        </div>
+                        <div class="notificationListBody">
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <span class="newNotifySpan"></span>
+                                        <img src="../../images/avatar/avatar-1.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">jasneet Manager <span>approved the
+                                                    flight request for Trip
+                                                    ID: 1314267 </span></h3>
+                                            <p class="approveTimeTxt mb-0">Now</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Flight.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <span class="newNotifySpan"></span>
+                                        <img src="../../images/avatar/avatar-2.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">Robert Manager <span>approved the
+                                                    hotel request for Trip
+                                                    ID: 1414245 </span></h3>
+                                            <p class="approveTimeTxt mb-0">6hr ago</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Hotel.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <img src="../../images/avatar/avatar-3.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">Robin Wasiknov<span>approved the trip
+                                                    request for Trip ID:
+                                                    1314267 </span></h3>
+                                            <p class="approveTimeTxt mb-0">Yesterday</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Trip.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <img src="../../images/avatar/avatar-4.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">Alexa Panera<span>approved the bus
+                                                    request for Trip
+                                                    ID: 1314267 </span></h3>
+                                            <p class="approveTimeTxt mb-0">Wed, 15 May, 2024 at 5:31 PM</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Bus.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <img src="../../images/avatar/avatar-2.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">Robert Manager<span>approved the cab
+                                                    request for Trip
+                                                    ID: 1314267 </span></h3>
+                                            <p class="approveTimeTxt mb-0">Wed, 15 May, 2024 at 5:31 PM</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Cab.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <hr class="layoutDivideHr" />
+                </div>
+                <div class="navAccountLink" onclick="profileViewContainer()">
+                    <img src="../../images/user-icon.png" alt="" />
+                    <h3 class="userName mb-0">Albert Flores</h3>
+                    <img id="profileArrow" src="../../images/down-arrow.png" alt="" />
+                </div>
+                <div class="profilePopupContainer" id="profileMenu" style="display: none;">
+                    <div class="myAccountHeading">
+                        <h3 class="mb-0">My Account</h3>
+                    </div>
+                    <div class="profileContainerWrapper">
+                        <ul class="profilInnrContainer px-0 mb-0">
+                            <a href="../profile/profile-emulate.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">Emulate</li>
+                            </a>
+                            <a href="../profile/profile.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">My Profile</li>
+                            </a>
+                            <a href="../profile/profile-change-password.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">Change Password</li>
+                            </a>
+                            <a href="../profile/profile-contact-us.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">Contact Us</li>
+                            </a>
+                            <a href="../profile/profile-feedback.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">Feedbacks</li>
+                            </a>
+                            <a href="../profile/profile-user-manual.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">User manual</li>
+                            </a>
+                            <a href="../Login/login.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h3 class="logoutTxt mb-0">Logout</h3>
+                                        <img src="../../images/icons/logout-profile.svg" alt="">
+                                    </div>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <nav role="navigation" class="hamburger">
+                <div id="menuToggle">
+                    <input type="checkbox" />
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <ul id="hamburgerMenu" class="px-0">
+                        <a href="../index.html">
+                            <li>Dashboard</li>
+                        </a>
+                        <a href="../flight-search.html">
+                            <li>New Booking</li>
+                        </a>
+                        <a href="../MyTrips/mytrips.html">
+                            <li>My Trips</li>
+                        </a>
+                        <a href="../MyApprovals/myapprovals.html">
+                            <li>Approvals</li>
+                        </a>
+                        <a href="#">
+                            <li>Analytics</li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+        </nav>
+    </header>
+    <section class="flightListMainContainer">
+        <div class="container">
+            <div class="bookingDoneContainer pt-3">
+                <div class="approveTicket">
+                    <div class="app1">
+                        <img src="../../images/check_circle.svg" alt="">
+                        <div class="apprTitle">
+                            <h3 class="mb-0">Your flight request for approval is successfully submitted</h3>
+                            <p class="mb-0 mt-1">Trip ID: 1314267</p>
+                        </div>
+                    </div>
+                    <div class="app2">
+                        <button>
+                            <a href="#">book another</a>
+                        </button>
+                        <button>
+                            <a href="#">My trips</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="bookingTicketDetailContainer mt-3">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item relative acItm">
+                            <h2 class="accordion-header" style="padding-left: 20px;">
+                                <button class="accordion-button boxSh-none boxPadding" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                                    aria-controls="collapseOne" style="padding: 20px 0px;">
+                                    Booking Details
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body " style="padding: 0 40px 20px;">
+                                    <div class="passengerForm">
+                                        <ul class="tripDetailsUl px-0">
+                                            <li class="tripDetailInnrLi">
+                                                <div class="tripSubInnr col">
+                                                    <h4 class="light-label mb-0">Trip ID</h4>
+                                                    <p class="mb-0">#1314267</p>
+                                                </div>
+                                            </li>
+                                            <li class="tripDetailInnrLi">
+                                                <div class="tripSubInnr col">
+                                                    <h4 class="light-label mb-0">trip name</h4>
+                                                    <p class="mb-0">Trip to Mumbai</p>
+                                                </div>
+                                            </li>
+                                            <li class="tripDetailInnrLi">
+                                                <div class="tripSubInnr col">
+                                                    <h4 class="light-label mb-0">Trip Type</h4>
+                                                    <p class="mb-0">One Way</p>
+                                                </div>
+                                            </li>
+                                            <li class="tripDetailInnrLi">
+                                                <div class="tripSubInnr col">
+                                                    <h4 class="light-label mb-0">travel type</h4>
+                                                    <p class="mb-0">Business Travel</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <span class="passengerForm circleSide">
+                                            <span></span>
+                                            <span></span>
+                                        </span>
+                                        <div class="dashLine">
+                                        </div>
+                                        <div class="passngrFlightDetails mt-4">
+                                            <ul class="tripDetailsUl px-0">
+                                                <li class="tripDetailInnrLi">
+                                                    <div class="tripSubInnr col">
+                                                        <h4 class="light-label mb-0">Pickup Location</h4>
+                                                        <p class="mb-0">Delhi Cantt Railway Station, New delhi</p>
+                                                    </div>
+                                                </li>
+                                                <li class="tripDetailInnrLi">
+                                                    <div class="tripSubInnr col">
+                                                        <h4 class="light-label mb-0">Drop Location</h4>
+                                                        <p class="mb-0">Delhi Airport(DEL), New Delhi</p>
+                                                    </div>
+                                                </li>
+                                                <li class="tripDetailInnrLi">
+                                                    <div class="tripSubInnr col">
+                                                        <h4 class="light-label mb-0">from Date</h4>
+                                                        <p class="mb-0">Wed, 05 June, 2024</p>
+                                                    </div>
+                                                </li>
+                                                <li class="tripDetailInnrLi">
+                                                    <div class="tripSubInnr col">
+                                                        <h4 class="light-label mb-0">to Date</h4>
+                                                        <p class="mb-0">Wed, 05 June, 2024</p>
+                                                    </div>
+                                                </li>
+                                                <li class="tripDetailInnrLi">
+                                                    <div class="tripSubInnr col">
+                                                        <h4 class="light-label mb-0">Travel Type</h4>
+                                                        <p class="mb-0">Airport Transfer</p>
+                                                    </div>
+                                                </li>
+                                                <li class="tripDetailInnrLi">
+                                                    <div class="tripSubInnr col">
+                                                        <h4 class="light-label mb-0">no. of passenger</h4>
+                                                        <p class="mb-0">1</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item acItm mt-3">
+                            <h2 class="accordion-header" style="padding-left: 20px;">
+                                <button class="accordion-button boxSh-none collapsed boxPadding" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                    aria-controls="collapseTwo" style="padding: 20px 0px; ">
+                                    Passenger Information
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body" style="padding: 0 20px 20px;">
+                                    <div class="bookingForm">
+                                        <div class="bookingDetails1">
+                                            <ul class="tripDetailsUl px-0">
+                                                <li class="tripDetailInnrLi">
+                                                    <div class="tripSubInnr col">
+                                                        <h4 class="light-label mb-0">Title</h4>
+                                                        <p class="mb-0">Mr.</p>
+                                                    </div>
+                                                </li>
+                                                <li class="tripDetailInnrLi">
+                                                    <div class="tripSubInnr col">
+                                                        <h4 class="light-label mb-0">first name</h4>
+                                                        <p class="mb-0">Albert</p>
+                                                    </div>
+                                                </li>
+                                                <li class="tripDetailInnrLi">
+                                                    <div class="tripSubInnr col">
+                                                        <h4 class="light-label mb-0">last Type</h4>
+                                                        <p class="mb-0">Flores</p>
+                                                    </div>
+                                                </li>
+                                                <li class="tripDetailInnrLi">
+                                                    <div class="tripSubInnr col">
+                                                        <h4 class="light-label mb-0">date of birth</h4>
+                                                        <p class="mb-0">02/02/2002</p>
+                                                    </div>
+                                                </li>
+                                                <li class="tripDetailInnrLi">
+                                                    <div class="tripSubInnr col">
+                                                        <h4 class="light-label mb-0">mobile number</h4>
+                                                        <p class="mb-0">9999999999</p>
+                                                    </div>
+                                                </li>
+                                                <li class="tripDetailInnrLi">
+                                                    <div class="tripSubInnr col">
+                                                        <h4 class="light-label mb-0">email id</h4>
+                                                        <p class="mb-0">albert.flores@gmail.com</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="orgHeadingTxt mt-3 mb-3">
+                                            <h3>Organisation Details</h3>
+                                        </div>
+                                        <div class="bookingDetails2">
+                                            <ul class="tripDetailsUl px-0">
+                                                <li class="tripDetailInnrLi">
+                                                    <div class="tripSubInnr col">
+                                                        <h4 class="light-label mb-0">business unit</h4>
+                                                        <p class="mb-0">Marketing Team</p>
+                                                    </div>
+                                                </li>
+                                                <li class="tripDetailInnrLi">
+                                                    <div class="tripSubInnr col">
+                                                        <h4 class="light-label mb-0">cost centre</h4>
+                                                        <p class="mb-0">TM00589372</p>
+                                                    </div>
+                                                </li>
+                                                <li class="tripDetailInnrLi">
+                                                    <div class="tripSubInnr col">
+                                                        <h4 class="light-label mb-0">employee code</h4>
+                                                        <p class="mb-0">TM00589372c</p>
+                                                    </div>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

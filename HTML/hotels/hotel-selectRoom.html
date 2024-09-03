@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Listing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/responsive.css" />
+    <link rel="stylesheet" href="../../js/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../../js/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../../js/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="mainheader activeHeader" style="background: rgba(3, 78, 162, 0.75)">
+        <nav class="navbar mb-0">
+            <a href="#" class="nav-logo">
+                <img class="mainLogo" src="../../images/signin-logo.png" alt="" />
+                <h2 class="logoTxt mb-0">EVA</h2>
+            </a>
+            <ul class="navRightSide navMenuH mb-0">
+                <div class="navContainer">
+                    <li class="navItemH">
+                        <a href="../index.html" class="navLinkH">Dashboard</a>
+                    </li>
+                    <li class="navItemH active">
+                        <a href="../flight-search.html" class="navLinkH">New Booking</a>
+                    </li>
+                    <li class="navItemH">
+                        <a href="../MyTrips/mytrips.html" class="navLinkH">My Trips</a>
+                    </li>
+                    <li class="navItemH">
+                        <a href="../MyApprovals/myapprovals.html" class="navLinkH">Approvals</a>
+                    </li>
+                    <li class="navItemH">
+                        <a href="../TripBox/tripbox.html" class="navLinkH">TripBox</a>
+                    </li>
+                    <li class="navItemH">
+                        <a href="#" class="navLinkH">Analytics </a>
+                    </li>
+                </div>
+            </ul>
+            <div class="layoutToolbarPadding">
+                <div class="navCartCountContainer" onclick="notifyContainer()">
+                    <img class="notifyIcon" src="../../images/Notification.png" alt="" />
+                    <h3 class="cartCount mb-0">4</h3>
+                    <div class="notifyPopupContainer" id="notifyMenu" style="display: none;">
+                        <div class="notificationHeader">
+                            <h3 class="mb-0">Notifications</h3>
+                            <a href="#">Mark all as read</a>
+                        </div>
+                        <div class="notificationListBody">
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <span class="newNotifySpan"></span>
+                                        <img src="../../images/avatar/avatar-1.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">jasneet Manager <span>approved the
+                                                    flight request for Trip
+                                                    ID: 1314267 </span></h3>
+                                            <p class="approveTimeTxt mb-0">Now</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Flight.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <span class="newNotifySpan"></span>
+                                        <img src="../../images/avatar/avatar-2.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">Robert Manager <span>approved the
+                                                    hotel request for Trip
+                                                    ID: 1414245 </span></h3>
+                                            <p class="approveTimeTxt mb-0">6hr ago</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Hotel.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <img src="../../images/avatar/avatar-3.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">Robin Wasiknov<span>approved the trip
+                                                    request for Trip ID:
+                                                    1314267 </span></h3>
+                                            <p class="approveTimeTxt mb-0">Yesterday</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Trip.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <img src="../../images/avatar/avatar-4.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">Alexa Panera<span>approved the bus
+                                                    request for Trip
+                                                    ID: 1314267 </span></h3>
+                                            <p class="approveTimeTxt mb-0">Wed, 15 May, 2024 at 5:31 PM</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Bus.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notificationInnrList">
+                                <div class="notifySub">
+                                    <div class="notifyBlock1">
+                                        <img src="../../images/avatar/avatar-2.svg" alt="">
+                                    </div>
+                                    <div class="notifyBlock2">
+                                        <div class="notifyBlockInnr1">
+                                            <h3 class="approvedUserNotifyTxt mb-0">Robert Manager<span>approved the cab
+                                                    request for Trip
+                                                    ID: 1314267 </span></h3>
+                                            <p class="approveTimeTxt mb-0">Wed, 15 May, 2024 at 5:31 PM</p>
+                                        </div>
+                                        <div class="notifyBlockInnr1">
+                                            <img src="../../images/avatar/Property1=Cab.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div>
+                    <hr class="layoutDivideHr" />
+                </div>
+                <div class="navAccountLink" onclick="profileViewContainer()">
+                    <img src="../../images/user-icon.png" alt="" />
+                    <h3 class="userName mb-0">Albert Flores</h3>
+                    <img id="profileArrow" src="../../images/down-arrow.png" alt="" />
+                </div>
+                <div class="profilePopupContainer" id="profileMenu" style="display: none;">
+                    <div class="myAccountHeading">
+                        <h3 class="mb-0">My Account</h3>
+                    </div>
+                    <div class="profileContainerWrapper">
+                        <ul class="profilInnrContainer px-0 mb-0">
+                            <a href="../profile/profile-emulate.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">Emulate</li>
+                            </a>
+                            <a href="../profile/profile.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">My Profile</li>
+                            </a>
+                            <a href="../profile/profile-change-password.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">Change Password</li>
+                            </a>
+                            <a href="../profile/profile-contact-us.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">Contact Us</li>
+                            </a>
+                            <a href="../profile/profile-feedback.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">Feedbacks</li>
+                            </a>
+                            <a href="../profile/profile-user-manual.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">User manual</li>
+                            </a>
+                            <a href="../Login/login.html" class="profileInnrTabs">
+                                <li class="profileInnrLi">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h3 class="logoutTxt mb-0">Logout</h3>
+                                        <img src="../../images/icons/logout-profile.svg" alt="">
+                                    </div>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <nav role="navigation" class="hamburger">
+                <div id="menuToggle">
+                    <input type="checkbox" />
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <ul id="hamburgerMenu" class="px-0">
+                        <a href="../index.html">
+                            <li>Dashboard</li>
+                        </a>
+                        <a href="../flight-search.html">
+                            <li>New Booking</li>
+                        </a>
+                        <a href="../MyTrips/mytrips.html">
+                            <li>My Trips</li>
+                        </a>
+                        <a href="../MyApprovals/myapprovals.html">
+                            <li>Approvals</li>
+                        </a>
+                        <a href="#">
+                            <li>Analytics</li>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+        </nav>
+    </header>
+
+    <section class="flightListMainContainer">
+        <div class="detailBoxContainer">
+            <div class="container">
+                <div class="categoryOuterBox">
+                    <div class="categoryBox col-12">
+                        <ul class="categoryUL px-0 mb-0">
+                            <li class="menuFlights menuWidth menuList  br-right padding-0">
+                                <a href="../flight-onewayListing.html" class="headerIcons pr-50 hrtlCenter flights">
+                                    <div class="bookingNavImg"></div>
+                                    <span class="headerIconTextAlignment headerIconactiveTxt mb-0">
+                                        Flights
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="menuFlights menuWidth menuList active  br-right padding-0">
+                                <a href="../hotels/hotel-listing.html" class="headerIcons p-0 hrtlCenter hotels">
+                                    <div class="bookingNavImg"></div>
+                                    <span class="headerIconTextAlignment mb-0"> Hotels </span>
+                                </a>
+                            </li>
+                            <li class="menuFlights menuWidth menuList  br-right padding-0">
+                                <a href="../bus/bus-listing.html" class="headerIcons p-0 hrtlCenter bus">
+                                    <div class="bookingNavImg"></div>
+                                    <span class="headerIconTextAlignment mb-0"> Bus </span>
+                                </a>
+                            </li>
+                            <li class="menuFlights menuWidth menuList  br-right padding-0">
+                                <a href="../cabs/cab-listing.html" class="headerIcons p-0 hrtlCenter cabs">
+                                    <div class="bookingNavImg"></div>
+                                    <span class="headerIconTextAlignment mb-0"> Cabs </span>
+                                </a>
+                            </li>
+                            <li class="menuFlights menuWidth menuList br-right padding-0">
+                                <a href="#" class="headerIcons p-0 hrtlCenter rails">
+                                    <div class="bookingNavImg"></div>
+                                    <span class="headerIconTextAlignment mb-0"> Rail </span>
+                                </a>
+                            </li>
+                            <li class="menuFlights menuWidth menuList br-right padding-0">
+                                <a href="#" class="headerIcons p-0 hrtlCenter currency">
+                                    <div class="bookingNavImg"></div>
+                                    <span class="headerIconTextAlignment mb-0"> Currency </span>
+                                </a>
+                            </li>
+                            <li class="menuFlights menuList br-right padding-0">
+                                <a href="#" class="headerIcons hrtlCenter insurance">
+                                    <div class="bookingNavImg"></div>
+                                    <span class="headerIconTextAlignment mb-0"> Insurance </span>
+                                </a>
+                            </li>
+                            <li class="menuFlights menuWidth menuList br-right padding-0">
+                                <a href="#" class="headerIcons hrtlCenter visa">
+                                    <div class="bookingNavImg"></div>
+                                    <span class="headerIconTextAlignment mb-0"> Visa </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="formBoxOuter">
+                    <div class="formBox col-12">
+                        <div class="oneWaySelctr formSelectrWidth mb-0 col-md-10 col-12 px-3 gap-3">
+                            <!-- In below div add (errorItem) class if user select wrong value-->
+                            <div class="fromCity right-bordered m-0 p-0 col-md-3">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle btnToggleClip" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <div class="fieldInnrBtn">
+                                            <h3 class="mb-0">Hotel/Area/City</h3>
+                                            <!-- id needs to be change -->
+                                            <input class="inputCity" type="text" name="" id="para1"
+                                                placeholder="Enter city or Hotel">
+                                            <div class="stateFrame" id="cityName" style="display: none;">
+                                                <h2 class="lrgTxt mb-0">New Delhi, Delhi, India</h2>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <ul class="dropdown-menu hotelListUL  px-0">
+                                        <h3 class="airprtTxt mb-0">Popular Places</h3>
+                                        <li>
+                                            <a class="dropdown-item" href="#" onclick="hotelListContent()">
+                                                <div class="listDiv">
+                                                    <div class="div1">
+                                                        <h3 class="autoCompleteSubTitle mb-0">
+                                                            <img src="../../images/icons/building.svg" alt="">
+                                                        </h3>
+                                                        <div>
+                                                            <h4 class="autoCompleteTitle mb-0">
+                                                                New Delhi, Delhi, India
+                                                            </h4>
+                                                            <p class="airprortNameTitle mb-0">
+                                                                City
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="div2">
+                                                        <img src="../../images/India (IN).png" alt="" />
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="listDiv">
+                                                    <div class="div1">
+                                                        <h3 class="autoCompleteSubTitle mb-0">
+                                                            <img src="../../images/icons/building.svg" alt="">
+                                                        </h3>
+                                                        <div>
+                                                            <h4 class="autoCompleteTitle mb-0">
+                                                                Mumbai, Maharashtra, India
+                                                            </h4>
+                                                            <p class="airprortNameTitle mb-0">
+                                                                City
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="div2">
+                                                        <img src="../../images/India (IN).png" alt="" />
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="listDiv">
+                                                    <div class="div1">
+                                                        <h3 class="autoCompleteSubTitle mb-0">
+                                                            <img src="../../images/icons/building.svg" alt="">
+                                                        </h3>
+                                                        <div>
+                                                            <h4 class="autoCompleteTitle mb-0">
+                                                                Hyderabad, Telangana, India
+                                                            </h4>
+                                                            <p class="airprortNameTitle mb-0">
+                                                                City
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="div2">
+                                                        <img src="../../images/India (IN).png" alt="" />
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="listDiv">
+                                                    <div class="div1">
+                                                        <h3 class="autoCompleteSubTitle mb-0">
+                                                            <img src="../../images/icons/building.svg" alt="">
+                                                        </h3>
+                                                        <div>
+                                                            <h4 class="autoCompleteTitle mb-0">
+                                                                ITC Maurya, New Delhi, India
+                                                            </h4>
+                                                            <p class="airprortNameTitle mb-0">
+                                                                Hotel
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="div2">
+                                                        <img src="../../images/India (IN).png" alt="" />
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="listDiv">
+                                                    <div class="div1">
+                                                        <h3 class="autoCompleteSubTitle mb-0">
+                                                            <img src="../../images/icons/building.svg" alt="">
+                                                        </h3>
+                                                        <div>
+                                                            <h4 class="autoCompleteTitle mb-0">
+                                                                New Delhi, Delhi, IndiaThe Taj Mahal Palace, Mumbai,
+                                                                India
+                                                            </h4>
+                                                            <p class="airprortNameTitle mb-0">
+                                                                Hotel
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="div2">
+                                                        <img src="../../images/India (IN).png" alt="" />
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="departureTime right-bordered m-0 p-0 col-md-3 ">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle btnToggleClip" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <div class="fieldInnrBtn">
+                                            <h3 class="mb-0">Check-In</h3>
+                                            <!-- <div class="flexTab mt-2">
+                                <h2 class="depatureTxt mb-0">Wed, 15 May</h2>
+                                <img src="../images/down-angle.svg" alt="" />
+                              </div> -->
+                                        </div>
+                                    </button>
+                                    <ul class="px-0 mb-0">
+                                        <li>
+                                            <input class="departureDate" placeholder="dd/mm/yyyy" type="date">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="returnTime right-bordered m-0 p-0 col-md-3 ">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle btnToggleClip" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <div class="fieldInnrBtn">
+                                            <h3 class="mb-0">Check-Out</h3>
+                                            <!-- <div class="flexTab mt-2">
+                                            <h2 class="returnTxt mb-0">Select Return</h2>
+                                            <img src="../images/down-angle.svg" alt="" />
+                                        </div> -->
+                                        </div>
+                                    </button>
+                                    <ul class="px-0 mb-0">
+                                        <li>
+                                            <input class="departureDate" type="date">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="travellerClass m-0 p-0 col-md-2">
+                                <div class="dropdown w-100">
+                                    <button
+                                        class="accordion-button collapsed shadow-none border-0 pb-0 accordianArrow w-100"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#travellerClass"
+                                        aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                                        <div class="w-100 d-flex justify-content-between">
+                                            <div class="fieldInnrBtn w-100">
+                                                <h3 class="mb-0">Rooms &amp; Guests</h3>
+                                                <div class="flexTab gap-0 mt-2">
+                                                    <h2 class="depatureTxt mb-0">
+                                                        1 Room, 1 Guest
+                                                    </h2>
+
+                                                    <span class="arrowIcon position-relative right-0">
+                                                        <img src="../../images/icons/up-arrows_active.svg" alt="">
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <ul class="dropdown-menu cityListUL guestTransformUL guestDropdownWidth px-0 accordion-collapse collapse "
+                                        id="travellerClass" aria-labelledby="panelsStayOpen-headingOne" style="">
+                                        <div class="travelDropDownContainer">
+                                            <div>
+                                                <div class="travelDropdownHeader">
+                                                    <h3 class="travellrHeadingTxt mb-0">Room 1</h3>
+                                                    <button type="button" class="btn-close" data-bs-toggle="dropdown"
+                                                        onclick="closeDropdown()"></button>
+                                                </div>
+                                                <div class="fltTravellers d-flex mt-3">
+                                                    <div class="adultRange d-flex gap-4 col border-end">
+                                                        <div class="rangeTxt">
+                                                            <h4 class="mb-0">Adults</h4>
+                                                            <p class="mb-0">(Aged 12+ yrs)</p>
+                                                        </div>
+                                                        <div class="gbCounter">
+                                                            <button
+                                                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                                class="minus"><img src="../../images/gray-minus.svg"
+                                                                    alt=""></button>
+                                                            <input class="quantity rangeCounter" min="0" name="quantity"
+                                                                value="1" type="number">
+                                                            <button
+                                                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                                class="plus"><img src="../../images/gray-plus.svg"
+                                                                    alt=""></button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="childrenRange d-flex gap-3 col border-end ps-3">
+                                                        <div class="rangeTxt">
+                                                            <h4 class="mb-0">Children</h4>
+                                                            <p class="mb-0">(Aged 2-12 yrs)</p>
+                                                        </div>
+                                                        <div class="gbCounter">
+                                                            <button
+                                                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                                class="minus"><img src="../../images/gray-minus.svg"
+                                                                    alt=""></button>
+                                                            <input class="quantity rangeCounter" min="0" name="quantity"
+                                                                value="1" type="number">
+                                                            <button
+                                                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                                class="plus"><img src="../../images/gray-plus.svg"
+                                                                    alt=""></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="travelDropdownHeader">
+                                                    <h3 class="travellrHeadingTxt mb-0">Room 2</h3>
+                                                    <div class="removeContainer">
+                                                        <img src="../../images/Delete.png" alt="">
+                                                        <h3 class="removeTxt mb-0">Remove</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="fltTravellers d-flex mt-3">
+                                                    <div class="adultRange d-flex gap-4 col border-end">
+                                                        <div class="rangeTxt">
+                                                            <h4 class="mb-0">Adults</h4>
+                                                            <p class="mb-0">(Aged 12+ yrs)</p>
+                                                        </div>
+                                                        <div class="gbCounter">
+                                                            <button
+                                                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                                class="minus"><img src="../../images/gray-minus.svg"
+                                                                    alt=""></button>
+                                                            <input class="quantity rangeCounter" min="0" name="quantity"
+                                                                value="1" type="number">
+                                                            <button
+                                                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                                class="plus"><img src="../../images/gray-plus.svg"
+                                                                    alt=""></button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="childrenRange d-flex gap-3 col border-end ps-3">
+                                                        <div class="rangeTxt">
+                                                            <h4 class="mb-0">Children</h4>
+                                                            <p class="mb-0">(Aged 2-12 yrs)</p>
+                                                        </div>
+                                                        <div class="gbCounter">
+                                                            <button
+                                                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                                class="minus"><img src="../../images/gray-minus.svg"
+                                                                    alt=""></button>
+                                                            <input class="quantity rangeCounter" min="0" name="quantity"
+                                                                value="1" type="number">
+                                                            <button
+                                                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                                class="plus"><img src="../../images/gray-plus.svg"
+                                                                    alt=""></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="proceedOfflineBtns mt-3 mb-3 justify-content-start">
+                                                <a href="#" class="searchOnlineBtn addRoomBtn">
+                                                    <img src="../../images/icons/plus.svg" alt="">
+                                                    <span class="mb-0">Add room</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="updateSearchBtn col-md-2 col-12">
+                            <a href="#" class="updateSearch">
+                                <span class="mb-0">Update Search</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flightsBoxContainer mt-4">
+            <div class="container">
+                <div class="hotelSelectRoomWrapper">
+                    <div class="backBtn">
+                        <a class="backBtnTxt d-flex gap-3 align-items-center" href="../hotels/hotel-listing.html">
+                            <img src="../../images/icons/back-blue-arrow.svg" alt="" />
+                            <p class="mb-0">Back to search</p>
+                        </a>
+                    </div>
+                    <div class="selctRoomContainer mt-4">
+                        <div class="selctTopHeader d-flex justify-content-between flex-wrap align-items-center w-100">
+                            <div>
+                                <h3 class="slctRoomTxt mb-0">Select Room</h3>
+                            </div>
+                            <div class="firstBox d-flex gap-3">
+                                <label class="primaryCheckboxContainer border-end pe-3">
+                                    <span class="commonCheckbox sizeSm">
+                                        <input id="listingFilterCheckbox" type="checkbox" name="listingFilterCheckbox"
+                                            value="true" />
+                                        <span class="boxType">
+                                            <span class="checkType"> </span>
+                                        </span>
+                                    </span>
+                                    <div class="checkboxContent">
+                                        <p class="checkboxTitle multipleSlctFareTxt mb-0">
+                                            Refundable
+                                        </p>
+                                    </div>
+                                </label>
+                                <label class="primaryCheckboxContainer">
+                                    <span class="commonCheckbox sizeSm">
+                                        <input id="listingFilterCheckbox" type="checkbox" name="listingFilterCheckbox"
+                                            value="true" />
+                                        <span class="boxType">
+                                            <span class="checkType"> </span>
+                                        </span>
+                                    </span>
+                                    <div class="checkboxContent">
+                                        <p class="checkboxTitle multipleSlctFareTxt mb-0">
+                                            Breakfast Included
+                                        </p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="rvWrapper mt-2">
+                            <div class="rvWrapperLeft wrapperBg">
+                                <div class="imgGalleryCont d-flex flex-column">
+                                    <div class="hotelCardLeft gap-2">
+                                        <div class="imgCont">
+                                            <img class="roomImg1" src="../../images/icons/room-img1.svg" alt="" />
+                                        </div>
+                                        <div class="imgThumbList">
+                                            <span class="imgThumbCont">
+                                                <img class="imgThumb" src="../../images/icons/room-img2.svg" />
+                                            </span>
+                                            <span class="imgThumbCont">
+                                                <img class="imgThumb" src="../../images/icons/room-img3.svg" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="imgHolderFooter mt-2">
+                                        <a href="#" class="imgTitText d-flex gap-2" data-bs-toggle="modal"
+                                            data-bs-target="#photosModal">
+                                            <p class="mb-0">+9 Photos</p>
+                                            <img src="../../images/icons/blue-nextArrow.svg" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="hotelDetailCont mt-4">
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <p class="hotelName mb-0">The Crown Hotel</p>
+                                    </div>
+                                    <div>
+                                        <div class="addrContainer">
+                                            <span class="locationPerNew">A 83/243, Rd. No.4, Street No.6, Mahipalpur
+                                                Extn, New
+                                                Delhi, Delhi, 110037</span>
+                                        </div>
+                                        <ul class="propertyOffer px-0 mt-3">
+                                            <li class="amenitiesListstyles">
+                                                <img src="../../images/icons/green-check.svg" alt="" />
+                                                <p class="persuasionItem mb-0">Free Wifi</p>
+                                            </li>
+                                            <li class="amenitiesListstyles">
+                                                <img src="../../images/icons/green-check.svg" alt="" />
+                                                <p class="persuasionItem mb-0">Free Breakfast</p>
+                                            </li>
+                                            <li class="amenitiesListstyles">
+                                                <img src="../../images/icons/green-check.svg" alt="" />
+                                                <div class="d-flex gap-1">
+                                                    <p class="persuasionItem mb-0">Swimming Pool |</p>
+                                                    <span style="color: #88919a"> +12 more</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="viewMoreDetailWrapper mt-3 mb-5">
+                                            <a href="#">View More Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rvWrapperRight">
+                                <div class="clusterContent">
+                                    <div class="listingCard" id="blue">
+                                        <div class="hotelCardTop">
+                                            <div class="hotelCardLeft flex-column">
+                                                <h2 class="roomTypeName mb-0">
+                                                    Standard Single Room
+                                                </h2>
+                                                <div class="paymentMethodBtn">
+                                                    <span class="prepaidPaymnt" id="whiteBg1">Refundable</span>
+                                                    <span class="prepaidPaymnt" id="whiteBg2">Breakfast Included</span>
+                                                    <span class="prepaidPaymnt" id="whiteBg3">Prepaid Payment</span>
+                                                </div>
+                                            </div>
+                                            <div class="hotelCardRight">
+                                                <div class="d-flex flex-column align-items-end amtTxt pe-2">
+                                                    <p class="mb-0">Retail Fare</p>
+                                                    <h3 class="mb-0">₹ 9,274</h3>
+                                                    <p class="mb-0">1 Night 2 Days</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="hotelCardBottom mt-4">
+                                            <ul class="propertyOffer px-0">
+                                                <li class="amenitiesListstyles">
+                                                    <img src="../../images/icons/wifi-img.svg" alt="" />
+                                                    <p class="persuasionItem mb-0">Free Wifi</p>
+                                                </li>
+                                                <li class="amenitiesListstyles">
+                                                    <img src="../../images/icons/breakfast-img.svg" alt="" />
+                                                    <p class="persuasionItem mb-0">Free Breakfast</p>
+                                                </li>
+                                            </ul>
+
+                                            <div class="d-flex align-items-center justify-content-end gap-3">
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#roomDetailModal"
+                                                    class="hotelDetailBtn">
+                                                    <span>Room Details</span>
+                                                </a>
+                                                <a href="../hotels/hotel-selectRoom.html" class="viewRoomBtn"
+                                                    data-bs-toggle="collapse" data-bs-target="#selctRoomModal"
+                                                    aria-expanded="false" aria-controls="selctRoomModal"
+                                                    onclick="changeBackgroundColor()">
+                                                    <span id="slectRoomClass">Select Room</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="listingCard">
+                                        <div class="hotelCardTop">
+                                            <div class="hotelCardLeft flex-column">
+                                                <h2 class="roomTypeName mb-0">
+                                                    Standard Double Room
+                                                </h2>
+                                                <div class="paymentMethodBtn">
+                                                    <span class="prepaidPaymnt">Refundable</span>
+                                                    <span class="prepaidPaymnt">Breakfast Included</span>
+                                                    <span class="prepaidPaymnt">Prepaid Payment</span>
+                                                </div>
+                                            </div>
+                                            <div class="hotelCardRight">
+                                                <div class="d-flex flex-column align-items-end amtTxt pe-2">
+                                                    <p class="mb-0">Retail Fare</p>
+                                                    <h3 class="mb-0">₹ 9,274</h3>
+                                                    <p class="mb-0">1 Night 2 Days</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="hotelCardBottom mt-4">
+                                            <ul class="propertyOffer px-0">
+                                                <li class="amenitiesListstyles">
+                                                    <img src="../../images/icons/green-check.svg" alt="" />
+                                                    <p class="persuasionItem mb-0">Free Wifi</p>
+                                                </li>
+                                                <li class="amenitiesListstyles">
+                                                    <img src="../../images/icons/green-check.svg" alt="" />
+                                                    <p class="persuasionItem mb-0">Free Breakfast</p>
+                                                </li>
+                                            </ul>
+
+                                            <div class="d-flex align-items-center justify-content-end gap-3">
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#roomDetailModal"
+                                                    class="hotelDetailBtn">
+                                                    <span>Room Details</span>
+                                                </a>
+                                                <a href="../hotels/hotel-selectRoom.html" class="viewRoomBtn"
+                                                    data-bs-toggle="collapse" data-bs-target="#selctRoomModal"
+                                                    aria-expanded="false" aria-controls="selctRoomModal">
+                                                    <span id="slectRoomClass">Select Room</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="listingCard">
+                                        <div class="hotelCardTop">
+                                            <div class="hotelCardLeft flex-column">
+                                                <h2 class="roomTypeName mb-0">Deluxe Double Room</h2>
+                                                <div class="paymentMethodBtn">
+                                                    <span class="prepaidPaymnt">Refundable</span>
+                                                    <span class="prepaidPaymnt">Breakfast Included</span>
+                                                    <span class="prepaidPaymnt">Prepaid Payment</span>
+                                                </div>
+                                            </div>
+                                            <div class="hotelCardRight">
+                                                <div class="d-flex flex-column align-items-end amtTxt pe-2">
+                                                    <p class="mb-0">Retail Fare</p>
+                                                    <h3 class="mb-0">₹ 9,274</h3>
+                                                    <p class="mb-0">1 Night 2 Days</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="hotelCardBottom mt-4">
+                                            <ul class="propertyOffer px-0">
+                                                <li class="amenitiesListstyles">
+                                                    <img src="../../images/icons/green-check.svg" alt="" />
+                                                    <p class="persuasionItem mb-0">Free Wifi</p>
+                                                </li>
+                                                <li class="amenitiesListstyles">
+                                                    <img src="../../images/icons/green-check.svg" alt="" />
+                                                    <p class="persuasionItem mb-0">Free Breakfast</p>
+                                                </li>
+                                            </ul>
+
+                                            <div class="d-flex align-items-center justify-content-end gap-3">
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#roomDetailModal"
+                                                    class="hotelDetailBtn">
+                                                    <span>Room Details</span>
+                                                </a>
+                                                <a href="../hotels/hotel-selectRoom.html" class="viewRoomBtn"
+                                                    data-bs-toggle="collapse" data-bs-target="#selctRoomModal"
+                                                    aria-expanded="false" aria-controls="selctRoomModal">
+                                                    <span id="slectRoomClass">Select Room</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- This proceed card will open when user select any fare type  -->
+    <div class="proceedCardWrapper collapse multi-collapse" id="selctRoomModal">
+        <div class="proceedCardInnr">
+            <div class="col-md-8 border-end overflow-auto d-flex">
+                <div class="departureSec col-xxl-5 col-xl-5 col-xl-4">
+                    <h3 class="hotelTitle">The Crown Hotel - New Delhi</h3>
+                    <p class="hotelAddrTxt mb-0">
+                        A 83/243, Rd. No.4, Street No.6, Mahipalpur Extn, New Delhi,
+                        Delhi, 110037
+                    </p>
+                </div>
+                <div class="departureSec col-xxl-4 col-xl-4 ps-3">
+                    <h5 class="hotelRmType">Standard Single Room</h5>
+                    <div class="flightDetails">
+                        <div class="arln-logo d-flex flex-column">
+                            <p class="airlineName mb-0" style="font-weight: 700">₹ 9,274</p>
+                            <small class="hotelAddrTxt"> 1 Night 2 Days</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="proceedShareBtns ps-3" style="justify-content: flex-end">
+                <div class="proceedOfflineBtns shareProceedBtns w-100" style="margin: 0px">
+                    <div class="amtTxt pe-2">
+                        <h3 class="mb-0">₹ 9,274</h3>
+                        <p class="mb-0">Corporate</p>
+                    </div>
+                    <a href="#" class="proceedBtn">
+                        <span>Share Details</span>
+                    </a>
+
+                    <a href="#" class="searchOnlineBtn prBtn" data-bs-toggle="modal"
+                        data-bs-target="#hoteloptimizeModal">
+                        <span>Proceed</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--This tab will open when user click on room details  -->
+    <!-- Modal -->
+    <div class="modal fade blurBackdrop" id="roomDetailModal" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="roomDetailModal" aria-hidden="true">
+        <div class="modal-dialog rightSlide popupContainer">
+            <div class="modal-content">
+                <div class="">
+                    <div class="flightTitle w-100">
+                        <div class="flightDetailLhs">
+                            <img src="../../images/icons/hotel-detail-img.svg" alt />
+                            <div class="flightDetailWrapper">
+                                <div class="flightHeader">
+                                    <h3 class="mb-0">Room Details</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flightDetailRhs">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="flightDetailBodyContainer">
+                        <div class="flightDetailsList">
+                            <ul class="listTab px-0">
+                                <li class="listTabInnr activeTab">
+                                    <a data-toggle="tab" href="#basicFacility">Basic Facilities</a>
+                                </li>
+                                <li class="listTabInnr">
+                                    <a data-toggle="tab" href="#fareBreakup">Fare Breakup</a>
+                                </li>
+                                <li class="listTabInnr">
+                                    <a data-toggle="tab" href="#cancelPolicy">Cancel Policy</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" style="padding: 20px 10px">
+                                <div id="basicFacility" class="tabContent" style="display: block">
+                                    <div>
+                                        <h3 class="amenitiesHeading mt-2 mb-0">Room Name</h3>
+                                        <p class="bookingInclusionTxt mt-2 mb-0">
+                                            Double or Twin Room
+                                        </p>
+                                    </div>
+                                    <div class="basicFacilityContainer mt-4">
+                                        <h3 class="amenitiesHeading mt-2 mb-0">
+                                            Amenities at The Crown Hotel
+                                        </h3>
+                                        <div class="d-flex justify-content-between">
+                                            <ul class="propertyOffer gap-4 px-0 mt-3">
+                                                <li class="amenitiesListstyles">
+                                                    <img src="../../images/icons/ac-img.svg" alt="" />
+                                                    <p class="persuasionItem amenitiesTxt mb-0">
+                                                        Air conditioning
+                                                    </p>
+                                                </li>
+                                                <li class="amenitiesListstyles">
+                                                    <img class="amenitiesImg" src="../../images/icons/restaurnt-img.svg"
+                                                        alt="" />
+                                                    <p class="persuasionItem amenitiesTxt mb-0">
+                                                        Restaurant
+                                                    </p>
+                                                </li>
+                                                <li class="amenitiesListstyles">
+                                                    <img src="../../images/icons/concierge-desk-img.svg" alt="" />
+                                                    <p class="persuasionItem amenitiesTxt mb-0">
+                                                        Concierge desk
+                                                    </p>
+                                                </li>
+                                                <li class="amenitiesListstyles">
+                                                    <img class="amenitiesImg" src="../../images/icons/bar-img.svg"
+                                                        alt="" />
+                                                    <p class="persuasionItem mb-0">Bar</p>
+                                                </li>
+                                                <li class="amenitiesListstyles">
+                                                    <img src="../../images/icons/wifi-img.svg" alt="" />
+                                                    <p class="persuasionItem amenitiesTxt mb-0">
+                                                        Free Wifi
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            <ul class="propertyOffer gap-4 px-0 mt-3">
+                                                <li class="amenitiesListstyles">
+                                                    <img src="../../images/icons/housekeeping-service-img.svg" alt="" />
+                                                    <p class="persuasionItem amenitiesTxt mb-0">
+                                                        Housekeeping services
+                                                    </p>
+                                                </li>
+                                                <li class="amenitiesListstyles">
+                                                    <img src="../../images/icons/parking-img.svg" alt="" />
+                                                    <p class="persuasionItem amenitiesTxt mb-0">
+                                                        Parking
+                                                    </p>
+                                                </li>
+                                                <li class="amenitiesListstyles">
+                                                    <img src="../../images/icons/doctor-oncall-img.svg" alt="" />
+                                                    <p class="persuasionItem amenitiesTxt mb-0">
+                                                        Doctor on call
+                                                    </p>
+                                                </li>
+                                                <li class="amenitiesListstyles">
+                                                    <img class="amenitiesImg" src="../../images/icons/game-room-img.svg"
+                                                        alt="" />
+                                                    <p class="persuasionItem amenitiesTxt mb-0">
+                                                        Game room
+                                                    </p>
+                                                </li>
+                                                <li class="amenitiesListstyles">
+                                                    <img src="../../images/icons/tick-img.svg" alt="" />
+                                                    <p class="persuasionItem amenitiesTxt mb-0">
+                                                        Kids Play Area
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            <ul class="propertyOffer gap-4 px-0 mt-3">
+                                                <li class="amenitiesListstyles">
+                                                    <img src="../images/icons/swimmingpool-img.svg" alt="" />
+                                                    <p class="persuasionItem amenitiesTxt mb-0">
+                                                        Swimming Pool
+                                                    </p>
+                                                </li>
+                                                <li class="amenitiesListstyles">
+                                                    <img src="../../images/icons/tick-img.svg" alt="" />
+                                                    <p class="persuasionItem amenitiesTxt mb-0">
+                                                        Airport shuttle service
+                                                    </p>
+                                                </li>
+                                                <li class="amenitiesListstyles">
+                                                    <img src="../../images/icons/bathroom-img.svg" alt="" />
+                                                    <p class="persuasionItem amenitiesTxt mb-0">
+                                                        Bathroom
+                                                    </p>
+                                                </li>
+                                                <li class="amenitiesListstyles">
+                                                    <img src="../../images/icons/tick-img.svg" alt="" />
+                                                    <p class="persuasionItem amenitiesTxt mb-0">
+                                                        24-hour security
+                                                    </p>
+                                                </li>
+                                                <li class="amenitiesListstyles">
+                                                    <img src="../../images/icons/breakfast-img.svg" alt="" />
+                                                    <p class="persuasionItem amenitiesTxt mb-0">
+                                                        Free Breakfast
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="fareBreakup" class="tabContent">
+                                    <div class="fareBreakupHeader mt-2">
+                                        <h3>Room Per Night: <span> ₹ 5,274</span></h3>
+                                    </div>
+                                    <div>
+                                        <div class="tableBrdr">
+                                            <table class="baggageTable">
+                                                <tr class="baggageHeading">
+                                                    <th>Description</th>
+                                                    <th>Fare</th>
+                                                </tr>
+                                                <tr class="baggageBody">
+                                                    <td>Base Fare</td>
+                                                    <td>₹ 8,274</td>
+                                                </tr>
+                                                <tr class="baggageBody">
+                                                    <td>Extra & Guest</td>
+                                                    <td>₹ 1,000</td>
+                                                </tr>
+                                                <tr class="baggageBody">
+                                                    <td>Taxes and Fees</td>
+                                                    <td>₹ 0</td>
+                                                </tr>
+                                                <tr class="baggageBody">
+                                                    <td>Fee</td>
+                                                    <td>₹ 9,274</td>
+                                                </tr>
+                                                <tr class="baggageBody">
+                                                    <td>GST</td>
+                                                    <td>₹ 9,274</td>
+                                                </tr>
+                                                <tr class="baggageBody">
+                                                    <td>Advanced amount</td>
+                                                    <td>₹ 9,274</td>
+                                                </tr>
+                                                <tr class="baggageBody">
+                                                    <td style="font-weight: 600">
+                                                        Total (1 Night 2 Days)
+                                                    </td>
+                                                    <td style="font-weight: 600">₹ 9.274</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="cancelPolicy" class="tabContent">
+                                    <div class="fareRuleBody mt-2">
+                                        <div style="width: 100%">
+                                            <h3 class="chargeTxt">Cancellation Charges</h3>
+                                            <div class="tableBrdr">
+                                                <table class="baggageTable">
+                                                    <tr class="baggageHeading">
+                                                        <th class="px-3 py-2">
+                                                            Time Frame <br />
+                                                            <small class="scheduledTxt">
+                                                                (From Scheduled flight departure)
+                                                            </small>
+                                                        </th>
+                                                        <th class="px-3 py-2">
+                                                            Charges <br />
+                                                            <small class="scheduledTxt">
+                                                                (Per person)
+                                                            </small>
+                                                        </th>
+                                                    </tr>
+                                                    <tr class="baggageBody">
+                                                        <td class="timeframeTxt">
+                                                            Before: <span>07-06-2024 09:20:32</span>
+                                                        </td>
+                                                        <td>₹ 0</td>
+                                                    </tr>
+                                                    <tr class="baggageBody">
+                                                        <td class="timeframeTxt">
+                                                            After: <span>07-06-2024 09:20:32</span>
+                                                        </td>
+                                                        <td>₹ 0</td>
+                                                    </tr>
+                                                    <tr class="baggageBody">
+                                                        <td style="font-weight: 600">Total</td>
+                                                        <td style="font-weight: 600">₹ 9.274</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modalFooter">
+                    <div class="fCont4 m-0">
+                        <div class="proceedShareBtns" style="justify-content: space-between">
+                            <div class="amtTxt">
+                                <h3 class="mb-0">₹ 9,274</h3>
+                                <p class="mb-0">Per night | incl. all taxes</p>
+                            </div>
+                            <div class="proceedOfflineBtns" style="margin: 0px">
+                                <a href="#" class="searchOnlineBtn prBtn" data-bs-toggle="modal"
+                                    data-bs-target="#optimizeModal">
+                                    <span class="mb-0">View Rooms</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <!-- When you click on more images then this slider image popup will opne -->
+    <div class="modal fade blurBackdrop" id="photosModal" tabindex="-1" aria-labelledby="photosModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl justify-content-center hotelSliderMain">
+            <div class="modal-content hotelSliderImg" style="">
+                <div class="modal-body p-0">
+                    <div class="modalHeader">
+                        <!-- <img class="loaderImg" src="../images/icons/hotelSlider1.svg" alt="" /> -->
+                        <div id="carouselExampleIndicators" class="carousel slide">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100 hotelSliderImg" src="../../images/icons/hotelSlider1.svg"
+                                        alt="..." />
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100 hotelSliderImg" src="../../images/icons/hotelSlider2.svg"
+                                        alt="..." />
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100 hotelSliderImg" src="../../images/icons/hotelSlider3.svg"
+                                        alt="..." />
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev leftCaraouselArrow" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <img aria-hidden="true" src="../../images/icons/arrow-circle-left.svg" alt="" />
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next rightCaraouselArrow" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <img aria-hidden="true" src="../../images/icons/arrow-circle-right.svg" alt="" />
+                                <span></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="crossImg">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#optimizeModal">
+                            <img src="../../images/Cancel-popup.svg" alt="" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <!-- When you click on proceed button this optimize popup will open -->
+    <div class="modal fade blurBackdrop" id="hoteloptimizeModal" tabindex="-1" aria-labelledby="optimizeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <div class="modalHeader">
+                        <img class="loaderImg" src="../../images/optimize-img.svg" alt="" />
+                        <img class="polygonImg" src="../../images/Polygon2.svg" alt="" />
+                    </div>
+                    <div class="modalInnrContent">
+                        <div class="journTxts">
+                            <h2 class="mb-0">Optimize your Travel!</h2>
+                            <p class="mb-0">
+                                The selected flight deviates from the travel policy and is not the
+                                most cost-effective option.
+                            </p>
+                        </div>
+                        <div class="hotelOptimizeCard">
+                            <div>
+                                <h3 class="recmndTxts mb-0" style="text-align: left">
+                                    Recommended Hotel
+                                </h3>
+                                <div class="recommendlinearLine"></div>
+                                <div class="listingCard recommendHotelWrapper">
+                                    <div class="">
+                                        <div class="hotelRecmmdTop">
+                                            <div class="hotelCardLeft col-md-9 col-12 border-end pe-3 col-md-8 col-12">
+                                                <div class="imgGalleryCont">
+                                                    <div class="imgCont relative">
+                                                        <img src="../../images/icons/room-img1.svg" alt="" />
+                                                    </div>
+                                                    <div class="imgThumbList">
+                                                        <span class="imgThumbCont"><img class="imgThumb"
+                                                                src="../../images/icons/room-img2.svg" /></span>
+                                                        <span class="imgThumbCont"><img class="imgThumb"
+                                                                src="../../images/icons/room-img3.svg" /></span>
+                                                    </div>
+                                                </div>
+                                                <div class="hotelDetailCont">
+                                                    <div class="d-flex gap-2 align-items-center">
+                                                        <p class="hotelName mb-0">The Crown Hotel |</p>
+                                                        <span>
+                                                            <img src="../../images/icons/hotel-rating.svg" alt="" />
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <div class="addrContainer">
+                                                            <span class="locationPerNew">A 83/243, Rd. No.4, Street
+                                                                No.6, Mahipalpur Extn,
+                                                                New Delhi, Delhi, 110037</span>
+                                                        </div>
+                                                        <ul class="propertyOffer px-0 mt-3">
+                                                            <li class="amenitiesListstyles">
+                                                                <img src="../../images/icons/wifi-img.svg" alt="" />
+                                                                <p class="persuasionItem mb-0">Free Wifi</p>
+                                                            </li>
+                                                            <li class="amenitiesListstyles">
+                                                                <img src="../../images/icons/breakfast-img.svg"
+                                                                    alt="" />
+                                                                <p class="persuasionItem mb-0">Free Breakfast</p>
+                                                            </li>
+                                                            <li class="amenitiesListstyles">
+                                                                <img src="../../images/icons/swimmingpool-img.svg"
+                                                                    alt="" />
+                                                                <div class="d-flex gap-1">
+                                                                    <p class="persuasionItem mb-0">
+                                                                        Swimming Pool |
+                                                                    </p>
+                                                                    <a href="#" data-bs-toggle="modal"
+                                                                        data-bs-target="#hotelDetailModal"
+                                                                        class="additionalItems">
+                                                                        +12 more</a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="hotelCardRight align-items-end ps-4 col-md-3 col-12">
+                                                <div class="paymentMethodBtn">
+                                                    <span class="prepaidPaymnt">Prepaid Payment</span>
+                                                    <span class="corporateFare">Corporate Fare</span>
+                                                </div>
+                                                <div class="d-flex flex-column align-items-end amtTxt pe-2">
+                                                    <h3 class="mb-0">₹ 9,274</h3>
+                                                    <p class="mb-0">Corporate</p>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-end gap-3">
+                                                    <a href="#" class="viewRoomBtn" style="max-width: 182px"
+                                                        onclick="viewRecmmdDetail()">
+                                                        <span id="viewRoom">View Rooms Details</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hotelRecmmdBottom border-top" id="hotelRcmmdBottomDetail"
+                                            style="display: none">
+                                            <ul class="hotelCheckList px-0 mb-0">
+                                                <li class="hotelInnrDetailList">
+                                                    <div class="col">
+                                                        <h4 class="accomodateTypeTxt mb-0">Check-In</h4>
+                                                        <p class="accmdateTimeTxt mb-0">Wed, 15 May, 2024</p>
+                                                        <i class="estimateTimeTxt">(from 12:00 pm)</i>
+                                                    </div>
+                                                </li>
+                                                <li class="hotelInnrDetailList">
+                                                    <div class="col">
+                                                        <h4 class="accomodateTypeTxt mb-0">Check-Out</h4>
+                                                        <p class="accmdateTimeTxt mb-0">Wed, 15 May, 2024</p>
+                                                        <i class="estimateTimeTxt">(untill 11:00 pm)</i>
+                                                    </div>
+                                                </li>
+                                                <li class="hotelInnrDetailList">
+                                                    <div class="col">
+                                                        <h4 class="accomodateTypeTxt mb-0">
+                                                            duration of stay
+                                                        </h4>
+                                                        <p class="accmdateTimeTxt mb-0">1 Night 1 Day</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="listingCard mt-3">
+                                                <div class="hotelCardTop">
+                                                    <div class="hotelCardLeft flex-column">
+                                                        <h2 class="roomTypeName mb-0">
+                                                            Standard Single Room
+                                                        </h2>
+                                                        <div class="paymentMethodBtn">
+                                                            <span class="prepaidPaymnt" id="whiteBg1">Refundable</span>
+                                                            <span class="prepaidPaymnt" id="whiteBg2">Breakfast
+                                                                Included</span>
+                                                            <span class="prepaidPaymnt" id="whiteBg3">Prepaid
+                                                                Payment</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="hotelCardRight">
+                                                        <div class="d-flex flex-column align-items-end amtTxt pe-2">
+                                                            <p class="mb-0">Retail Fare</p>
+                                                            <h3 class="mb-0">₹ 9,274</h3>
+                                                            <p class="mb-0">1 Night 2 Days</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="hotelCardBottom mt-4">
+                                                    <ul class="propertyOffer px-0">
+                                                        <li class="amenitiesListstyles">
+                                                            <img src="../../images/icons/wifi-img.svg" alt="" />
+                                                            <p class="persuasionItem mb-0">Free Wifi</p>
+                                                        </li>
+                                                        <li class="amenitiesListstyles">
+                                                            <img src="../../images/icons/breakfast-img.svg" alt="" />
+                                                            <p class="persuasionItem mb-0">Free Breakfast</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <h3 class="selctFlightTxts mb-0" style="text-align: left">
+                                    selected Hotel
+                                </h3>
+                                <div class="listingCard selectedHotelWrapper">
+                                    <div class="">
+                                        <div class="hotelRecmmdTop">
+                                            <div class="hotelCardLeft col-md-9 col-12 border-end pe-3 col-md-8 col-12">
+                                                <div class="imgGalleryCont">
+                                                    <div class="imgCont relative">
+                                                        <img src="../../images/icons/room-img1.svg" alt="" />
+                                                    </div>
+                                                    <div class="imgThumbList">
+                                                        <span class="imgThumbCont"><img class="imgThumb"
+                                                                src="../../images/icons/room-img2.svg" /></span>
+                                                        <span class="imgThumbCont"><img class="imgThumb"
+                                                                src="../../images/icons/room-img3.svg" /></span>
+                                                    </div>
+                                                </div>
+                                                <div class="hotelDetailCont">
+                                                    <div class="d-flex gap-2 align-items-center">
+                                                        <p class="hotelName mb-0">The Crown Hotel |</p>
+                                                        <span>
+                                                            <img src="../../images/icons/hotel-rating.svg" alt="" />
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <div class="addrContainer">
+                                                            <span class="locationPerNew">A 83/243, Rd. No.4, Street
+                                                                No.6,
+                                                                Mahipalpur Extn, New
+                                                                Delhi, Delhi, 110037</span>
+                                                        </div>
+                                                        <ul class="propertyOffer px-0 mt-3">
+                                                            <li class="amenitiesListstyles">
+                                                                <img src="../../images/icons/wifi-img.svg" alt="" />
+                                                                <p class="persuasionItem mb-0">Free Wifi</p>
+                                                            </li>
+                                                            <li class="amenitiesListstyles">
+                                                                <img src="../../images/icons/breakfast-img.svg"
+                                                                    alt="" />
+                                                                <p class="persuasionItem mb-0">Free Breakfast</p>
+                                                            </li>
+                                                            <li class="amenitiesListstyles">
+                                                                <img src="../../images/icons/swimmingpool-img.svg"
+                                                                    alt="" />
+                                                                <div class="d-flex gap-1">
+                                                                    <p class="persuasionItem mb-0">Swimming Pool |</p>
+                                                                    <a href="#" data-bs-toggle="modal"
+                                                                        data-bs-target="#hotelDetailModal"
+                                                                        class="additionalItems">
+                                                                        +12 more</a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="hotelCardRight align-items-end ps-4 col-md-3 col-12">
+                                                <div class="paymentMethodBtn">
+                                                    <span class="prepaidPaymnt">Prepaid Payment</span>
+                                                    <span class="corporateFare">Corporate Fare</span>
+                                                </div>
+                                                <div class="d-flex flex-column align-items-end amtTxt pe-2">
+                                                    <h3 class="mb-0">₹ 9,274</h3>
+                                                    <p class="mb-0">Corporate</p>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-end gap-3">
+                                                    <a href="#" class="viewRoomBtn" style="max-width: 182px"
+                                                        onclick="hotelSelctBottomDetail()">
+                                                        <span id="hotelSelctRoom">View Rooms Details</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hotelRecmmdBottom border-top" id="hotelSelctBottomDetail"
+                                            style="display: none">
+                                            <ul class="hotelCheckList px-0 mb-0">
+                                                <li class="hotelInnrDetailList">
+                                                    <div class="col">
+                                                        <h4 class="accomodateTypeTxt mb-0">Check-In</h4>
+                                                        <p class="accmdateTimeTxt mb-0">Wed, 15 May, 2024</p>
+                                                        <i class="estimateTimeTxt">(from 12:00 pm)</i>
+                                                    </div>
+                                                </li>
+                                                <li class="hotelInnrDetailList">
+                                                    <div class="col">
+                                                        <h4 class="accomodateTypeTxt mb-0">Check-Out</h4>
+                                                        <p class="accmdateTimeTxt mb-0">Wed, 15 May, 2024</p>
+                                                        <i class="estimateTimeTxt">(untill 11:00 pm)</i>
+                                                    </div>
+                                                </li>
+                                                <li class="hotelInnrDetailList">
+                                                    <div class="col">
+                                                        <h4 class="accomodateTypeTxt mb-0">duration of stay</h4>
+                                                        <p class="accmdateTimeTxt mb-0">1 Night 1 Day</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="listingCard mt-3" style="background: rgba(239, 246, 255, 1);">
+                                                <div class="hotelCardTop">
+                                                    <div class="hotelCardLeft flex-column">
+                                                        <h2 class="roomTypeName mb-0">Standard Single Room</h2>
+                                                        <div class="paymentMethodBtn">
+                                                            <span class="prepaidPaymnt"
+                                                                style="background: #fff;">Refundable</span>
+                                                            <span class="prepaidPaymnt"
+                                                                style="background: #fff;">Breakfast
+                                                                Included</span>
+                                                            <span class="prepaidPaymnt"
+                                                                style="background: #fff;">Prepaid
+                                                                Payment</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="hotelCardRight">
+                                                        <div class="d-flex flex-column align-items-end amtTxt pe-2">
+                                                            <p class="mb-0">Retail Fare</p>
+                                                            <h3 class="mb-0">₹ 9,274</h3>
+                                                            <p class="mb-0">1 Night 2 Days</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="hotelCardBottom mt-4">
+                                                    <ul class="propertyOffer px-0">
+                                                        <li class="amenitiesListstyles">
+                                                            <img class="amenitiesImgBg"
+                                                                src="../../images/icons/wif-img.svg" alt="" />
+                                                            <p class="persuasionItem mb-0">Free Wifi</p>
+                                                        </li>
+                                                        <li class="amenitiesListstyles">
+                                                            <img class="amenitiesImgBg"
+                                                                src="../../images/icons/free-parking-img.svg" alt="" />
+                                                            <p class="persuasionItem mb-0">Free Self Parking</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proceedOfflineBtns proceedBtns" data-bs-target="#optimizeModalToggle2"
+                    data-bs-toggle="modal" style="margin: 0px; width: 100%">
+                    <a href="hotel-proceed-form1.html" class="proceedBtn"><span>Continue with Selected</span></a>
+
+                    <a href="hotel-proceed-form1.html" class="searchOnlineBtn prBtn">
+                        <span>Continue with recommended</span>
+                    </a>
+                </div>
+                <div class="crossImg">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#optimizeModal">
+                        <img src="../../images/Cancel-popup.svg" alt="" />
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

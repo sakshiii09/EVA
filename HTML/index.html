@@ -2,1032 +2,1026 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="../js/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" />
-    <link rel="stylesheet" href="../js/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../js/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../js/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="../js/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../js/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header class="mainheader">
-        <nav class="navbar mb-0">
-            <a href="#" class="nav-logo">
-                <img class="mainLogo" src="../images/signin-logo.png" alt="" />
-                <h2 class="logoTxt mb-0">EVA</h2>
-            </a>
-            <ul class=" navRightSide navMenuH mb-0">
-                <div class="navContainer">
-                    <li class="navItemH active">
-                        <a href="index.html" class="navLinkH">Dashboard</a>
-                    </li>
-                    <li class="navItemH">
-                        <a href="flight-search.html" class="navLinkH">New Booking</a>
-                    </li>
-                    <li class="navItemH">
-                        <a href="MyTrips/mytrips.html" class="navLinkH">MyTrips</a>
-                    </li>
-                    <li class="navItemH">
-                        <a href="MyApprovals/myapprovals.html" class="navLinkH">Approvals</a>
-                    </li>
-                    <li class="navItemH">
-                        <a href="TripBox/tripbox.html" class="navLinkH">TripBox</a>
-                    </li>
-                    <li class="navItemH">
-                        <a href="#" class="navLinkH">Analytics </a>
-                    </li>
+  <header class="mainheader">
+    <nav class="navbar mb-0">
+      <a href="#" class="nav-logo">
+        <img class="mainLogo" src="../images/signin-logo.png" alt="" />
+        <h2 class="logoTxt mb-0">EVA</h2>
+      </a>
+      <ul class=" navRightSide navMenuH mb-0">
+        <div class="navContainer">
+          <li class="navItemH active">
+            <a href="index.html" class="navLinkH">Dashboard</a>
+          </li>
+          <li class="navItemH">
+            <a href="flight-search.html" class="navLinkH">New Booking</a>
+          </li>
+          <li class="navItemH">
+            <a href="MyTrips/mytrips.html" class="navLinkH">MyTrips</a>
+          </li>
+          <li class="navItemH">
+            <a href="MyApprovals/myapprovals.html" class="navLinkH">Approvals</a>
+          </li>
+          <li class="navItemH">
+            <a href="TripBox/tripbox.html" class="navLinkH">TripBox</a>
+          </li>
+          <li class="navItemH">
+            <a href="#" class="navLinkH">Analytics </a>
+          </li>
+        </div>
+      </ul>
+      <div class="layoutToolbarPadding">
+        <div class="navCartCountContainer" onclick="notifyContainer()">
+          <img class="notifyIcon" src="../images/Notification.png" alt="" />
+          <h3 class="cartCount mb-0">4</h3>
+          <div class="notifyPopupContainer" id="notifyMenu" style="display: none;">
+            <div class="notificationHeader">
+              <h3 class="mb-0">Notifications</h3>
+              <a href="#">Mark all as read</a>
+            </div>
+            <div class="notificationListBody">
+              <div class="notificationInnrList">
+                <div class="notifySub">
+                  <div class="notifyBlock1">
+                    <span class="newNotifySpan"></span>
+                    <img src="../images/avatar/avatar-1.svg" alt="">
+                  </div>
+                  <div class="notifyBlock2">
+                    <div class="notifyBlockInnr1">
+                      <h3 class="approvedUserNotifyTxt mb-0">jasneet Manager <span>approved the flight request for Trip
+                          ID: 1314267 </span></h3>
+                      <p class="approveTimeTxt mb-0">Now</p>
+                    </div>
+                    <div class="notifyBlockInnr1">
+                      <img src="../images/avatar/Property1=Flight.svg" alt="">
+                    </div>
+                  </div>
                 </div>
+              </div>
+              <div class="notificationInnrList">
+                <div class="notifySub">
+                  <div class="notifyBlock1">
+                    <span class="newNotifySpan"></span>
+                    <img src="../images/avatar/avatar-2.svg" alt="">
+                  </div>
+                  <div class="notifyBlock2">
+                    <div class="notifyBlockInnr1">
+                      <h3 class="approvedUserNotifyTxt mb-0">Robert Manager <span>approved the hotel request for Trip
+                          ID: 1414245 </span></h3>
+                      <p class="approveTimeTxt mb-0">6hr ago</p>
+                    </div>
+                    <div class="notifyBlockInnr1">
+                      <img src="../images/avatar/Property1=Hotel.svg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="notificationInnrList">
+                <div class="notifySub">
+                  <div class="notifyBlock1">
+                    <img src="../images/avatar/avatar-3.svg" alt="">
+                  </div>
+                  <div class="notifyBlock2">
+                    <div class="notifyBlockInnr1">
+                      <h3 class="approvedUserNotifyTxt mb-0">Robin Wasiknov<span>approved the trip request for Trip ID:
+                          1314267 </span></h3>
+                      <p class="approveTimeTxt mb-0">Yesterday</p>
+                    </div>
+                    <div class="notifyBlockInnr1">
+                      <img src="../images/avatar/Property1=Trip.svg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="notificationInnrList">
+                <div class="notifySub">
+                  <div class="notifyBlock1">
+                    <img src="../images/avatar/avatar-4.svg" alt="">
+                  </div>
+                  <div class="notifyBlock2">
+                    <div class="notifyBlockInnr1">
+                      <h3 class="approvedUserNotifyTxt mb-0">Alexa Panera<span>approved the bus request for Trip
+                          ID: 1314267 </span></h3>
+                      <p class="approveTimeTxt mb-0">Wed, 15 May, 2024 at 5:31 PM</p>
+                    </div>
+                    <div class="notifyBlockInnr1">
+                      <img src="../images/avatar/Property1=Bus.svg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="notificationInnrList">
+                <div class="notifySub">
+                  <div class="notifyBlock1">
+                    <img src="../images/avatar/avatar-2.svg" alt="">
+                  </div>
+                  <div class="notifyBlock2">
+                    <div class="notifyBlockInnr1">
+                      <h3 class="approvedUserNotifyTxt mb-0">Robert Manager<span>approved the cab request for Trip
+                          ID: 1314267 </span></h3>
+                      <p class="approveTimeTxt mb-0">Wed, 15 May, 2024 at 5:31 PM</p>
+                    </div>
+                    <div class="notifyBlockInnr1">
+                      <img src="../images/avatar/Property1=Cab.svg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div>
+          <hr class="layoutDivideHr" />
+        </div>
+        <div class="navAccountLink" onclick="profileViewContainer()">
+          <img src="../images/user-icon.png" alt="" />
+          <h3 class="userName mb-0">Albert Flores</h3>
+          <img id="profileArrow" src="../images/down-arrow.png" alt="" />
+        </div>
+        <div class="profilePopupContainer" id="profileMenu" style="display: none;">
+          <div class="myAccountHeading">
+            <h3 class="mb-0">My Account</h3>
+          </div>
+          <div class="profileContainerWrapper">
+            <ul class="profilInnrContainer px-0 mb-0">
+              <a href="profile/profile-emulate.html" class="profileInnrTabs">
+                <li class="profileInnrLi">Emulate</li>
+              </a>
+              <a href="profile/profile.html" class="profileInnrTabs">
+                <li class="profileInnrLi">My Profile</li>
+              </a>
+              <a href="profile/profile-change-password.html" class="profileInnrTabs">
+                <li class="profileInnrLi">Change Password</li>
+              </a>
+              <a href="profile/profile-contact-us.html" class="profileInnrTabs">
+                <li class="profileInnrLi">Contact Us</li>
+              </a>
+              <a href="profile/profile-feedback.html" class="profileInnrTabs">
+                <li class="profileInnrLi">Feedbacks</li>
+              </a>
+              <a href="profile/profile-user-manual.html" class="profileInnrTabs">
+                <li class="profileInnrLi">User manual</li>
+              </a>
+              <a href="Login/login.html" class="profileInnrTabs">
+                <li class="profileInnrLi">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <h3 class="logoutTxt mb-0">Logout</h3>
+                    <img src="../images/icons/logout-profile.svg" alt="">
+                  </div>
+                </li>
+              </a>
             </ul>
-            <div class="layoutToolbarPadding">
-                <div class="navCartCountContainer" onclick="notifyContainer()">
-                    <img class="notifyIcon" src="../images/Notification.png" alt="" />
-                    <h3 class="cartCount mb-0">4</h3>
-                    <div class="notifyPopupContainer" id="notifyMenu" style="display: none;">
-                        <div class="notificationHeader">
-                            <h3 class="mb-0">Notifications</h3>
-                            <a href="#">Mark all as read</a>
-                        </div>
-                        <div class="notificationListBody">
-                            <div class="notificationInnrList">
-                                <div class="notifySub">
-                                    <div class="notifyBlock1">
-                                        <span class="newNotifySpan"></span>
-                                        <img src="../images/avatar/avatar-1.svg" alt="">
-                                    </div>
-                                    <div class="notifyBlock2">
-                                        <div class="notifyBlockInnr1">
-                                            <h3 class="approvedUserNotifyTxt mb-0">jasneet Manager <span>approved the
-                                                    flight request for Trip
-                                                    ID: 1314267 </span></h3>
-                                            <p class="approveTimeTxt mb-0">Now</p>
-                                        </div>
-                                        <div class="notifyBlockInnr1">
-                                            <img src="../images/avatar/Property1=Flight.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="notificationInnrList">
-                                <div class="notifySub">
-                                    <div class="notifyBlock1">
-                                        <span class="newNotifySpan"></span>
-                                        <img src="../images/avatar/avatar-2.svg" alt="">
-                                    </div>
-                                    <div class="notifyBlock2">
-                                        <div class="notifyBlockInnr1">
-                                            <h3 class="approvedUserNotifyTxt mb-0">Robert Manager <span>approved the
-                                                    hotel request for Trip
-                                                    ID: 1414245 </span></h3>
-                                            <p class="approveTimeTxt mb-0">6hr ago</p>
-                                        </div>
-                                        <div class="notifyBlockInnr1">
-                                            <img src="../images/avatar/Property1=Hotel.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="notificationInnrList">
-                                <div class="notifySub">
-                                    <div class="notifyBlock1">
-                                        <img src="../images/avatar/avatar-3.svg" alt="">
-                                    </div>
-                                    <div class="notifyBlock2">
-                                        <div class="notifyBlockInnr1">
-                                            <h3 class="approvedUserNotifyTxt mb-0">Robin Wasiknov<span>approved the trip
-                                                    request for Trip ID:
-                                                    1314267 </span></h3>
-                                            <p class="approveTimeTxt mb-0">Yesterday</p>
-                                        </div>
-                                        <div class="notifyBlockInnr1">
-                                            <img src="../images/avatar/Property1=Trip.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="notificationInnrList">
-                                <div class="notifySub">
-                                    <div class="notifyBlock1">
-                                        <img src="../images/avatar/avatar-4.svg" alt="">
-                                    </div>
-                                    <div class="notifyBlock2">
-                                        <div class="notifyBlockInnr1">
-                                            <h3 class="approvedUserNotifyTxt mb-0">Alexa Panera<span>approved the bus
-                                                    request for Trip
-                                                    ID: 1314267 </span></h3>
-                                            <p class="approveTimeTxt mb-0">Wed, 15 May, 2024 at 5:31 PM</p>
-                                        </div>
-                                        <div class="notifyBlockInnr1">
-                                            <img src="../images/avatar/Property1=Bus.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="notificationInnrList">
-                                <div class="notifySub">
-                                    <div class="notifyBlock1">
-                                        <img src="../images/avatar/avatar-2.svg" alt="">
-                                    </div>
-                                    <div class="notifyBlock2">
-                                        <div class="notifyBlockInnr1">
-                                            <h3 class="approvedUserNotifyTxt mb-0">Robert Manager<span>approved the cab
-                                                    request for Trip
-                                                    ID: 1314267 </span></h3>
-                                            <p class="approveTimeTxt mb-0">Wed, 15 May, 2024 at 5:31 PM</p>
-                                        </div>
-                                        <div class="notifyBlockInnr1">
-                                            <img src="../images/avatar/Property1=Cab.svg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div>
-                    <hr class="layoutDivideHr" />
-                </div>
-                <div class="navAccountLink" onclick="profileViewContainer()">
-                    <img src="../images/user-icon.png" alt="" />
-                    <h3 class="userName mb-0">Albert Flores</h3>
-                    <img id="profileArrow" src="../images/down-arrow.png" alt="" />
-                </div>
-                <div class="profilePopupContainer" id="profileMenu" style="display: none;">
-                    <div class="myAccountHeading">
-                        <h3 class="mb-0">My Account</h3>
-                    </div>
-                    <div class="profileContainerWrapper">
-                        <ul class="profilInnrContainer px-0 mb-0">
-                            <a href="profile/profile-emulate.html" class="profileInnrTabs">
-                                <li class="profileInnrLi">Emulate</li>
-                            </a>
-                            <a href="profile/profile.html" class="profileInnrTabs">
-                                <li class="profileInnrLi">My Profile</li>
-                            </a>
-                            <a href="profile/profile-change-password.html" class="profileInnrTabs">
-                                <li class="profileInnrLi">Change Password</li>
-                            </a>
-                            <a href="profile/profile-contact-us.html" class="profileInnrTabs">
-                                <li class="profileInnrLi">Contact Us</li>
-                            </a>
-                            <a href="profile/profile-feedback.html" class="profileInnrTabs">
-                                <li class="profileInnrLi">Feedbacks</li>
-                            </a>
-                            <a href="profile/profile-user-manual.html" class="profileInnrTabs">
-                                <li class="profileInnrLi">User manual</li>
-                            </a>
-                            <a href="Login/login.html" class="profileInnrTabs">
-                                <li class="profileInnrLi">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <h3 class="logoutTxt mb-0">Logout</h3>
-                                        <img src="../images/icons/logout-profile.svg" alt="">
-                                    </div>
-                                </li>
-                            </a>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <nav role="navigation" class="hamburger">
-                <div id="menuToggle">
-                    <input type="checkbox" />
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <ul id="hamburgerMenu" class="px-0">
-                        <a href="index.html">
-                            <li>Dashboard</li>
-                        </a>
-                        <a href="flight-search.html">
-                            <li>New Booking</li>
-                        </a>
-                        <a href="MyTrips/mytrips.html">
-                            <li>My Trips</li>
-                        </a>
-                        <a href="MyApprovals/myapprovals.html">
-                            <li>Approvals</li>
-                        </a>
-                        <a href="#">
-                            <li>Analytics</li>
-                        </a>
-                    </ul>
-                </div>
-            </nav>
-        </nav>
-    </header>
-    <section class="dashboardMainContainer">
-        <div class="dashboardBanner">
-            <img class="bannrImg" src="../images/banner/dashboard-banner.svg" alt="" />
-            <div class="bannrDetail">
-                <div class="bannrInnrLeft">
-                    <h1 class="mrngTxt mb-0">Good Morning, <span> Albert!</span></h1>
-                    <p class="dataTxt mb-0">
-                        Find out the data of your travel & follow it over time
-                    </p>
-                </div>
-                <div class="bannrInnrRight">
-                    <div class="locationReport">
-                        <div class="locationSelct1 ">
-                            <img src="../images/location.png" alt="" />
-                        </div>
-                        <div class="locationSelct2">
-                            <select class="locationWrap">
-                                <option value="">New Delhi</option>
-                                <option value="apples">Chennai</option>
-                                <option value="bananas">Bengaluru</option>
-                                <option value="oranges">Mumbai</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="weatherReport border-start ps-3">
-                        <img src="../images/cloudy-icon.png" alt="" />
-                        <p class="degreeTxt mb-0">28&deg; C <span>Cloudy</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="overviewBoxContainer">
-                <div class="overviewInnrContainer">
-                    <div class="boxTopContainer">
-                        <h3>Overview</h3>
-                        <div class="monthWrapper">
-                            <select class="">
-                                <option value="">Last 6 months</option>
-                                <option value="apples">Last 1 year</option>
-                                <option value="bananas">Last 2 year</option>
-                                <option value="oranges">Last 3 year</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="boxBottomContainer flex-wrap">
-                        <div class="boxItem col boxColr1">
-                            <div>
-                                <img src="../images/trip-frame.png" alt="" />
-                            </div>
-                            <div class="boxInnrItems">
-                                <div class="tripDetailTxts">
-                                    <h3 class="tripCount mb-0">240</h3>
-                                    <p class="tripStatus mb-0">Trips Completed</p>
-                                </div>
-
-                                <div class="tooltipContainer tooltipImg1">
-                                    <span class="tooltiptext mb-0">Trips Completed is your adventure score count your
-                                        journeys, embrace the explorer within.</span>
-                                </div>
-                            </div>
-                            <div class="sideImg">
-                                <img src="../images/trip-side.png" alt="" />
-                            </div>
-                        </div>
-                        <div class="boxItem col boxColr2">
-                            <div>
-                                <img src="../images/distance-frame.png" alt="" />
-                            </div>
-                            <div class="boxInnrItems">
-                                <div class="tripDetailTxts">
-                                    <h3 class="tripCount mb-0">8,256 kms</h3>
-                                    <p class="tripStatus mb-0">Distance Travelled</p>
-                                </div>
-                                <div class="tooltipContainer tooltipImg2">
-                                    <span class="tooltiptext mb-0">Trips Completed is your adventure score count your
-                                        journeys, embrace the explorer within.</span>
-                                </div>
-                            </div>
-                            <div class="sideImg">
-                                <img src="../images/distance-side.png" alt="" />
-                            </div>
-                        </div>
-                        <div class="boxItem col boxColr3">
-                            <div>
-                                <img src="../images/avgtrip- frame.png" alt="" />
-                            </div>
-                            <div class="boxInnrItems">
-                                <div class="tripDetailTxts">
-                                    <h3 class="tripCount mb-0">3.5 days</h3>
-                                    <p class="tripStatus mb-0">Avg Trip Duration</p>
-                                </div>
-                                <div class="tooltipContainer tooltipImg3">
-                                    <span class="tooltiptext mb-0">Trips Completed is your adventure score count your
-                                        journeys, embrace the explorer within.</span>
-                                </div>
-                            </div>
-                            <div class="sideImg">
-                                <img src="../images/avgtrip-side.png" alt="" />
-                            </div>
-                        </div>
-                        <div class="boxItem col boxColr4">
-                            <div>
-                                <img src="../images/co2-frame.png" alt="" />
-                            </div>
-                            <div class="boxInnrItems">
-                                <div class="tripDetailTxts">
-                                    <h3 class="tripCount mb-0">1.2 mt</h3>
-                                    <p class="tripStatus mb-0">CO2 Emissions Saved</p>
-                                </div>
-                                <div class="tooltipContainer tooltipImg4">
-                                    <span class="tooltiptext mb-0">Trips Completed is your adventure score count your
-                                        journeys, embrace the explorer within.</span>
-                                </div>
-                            </div>
-                            <div class="sideImg">
-                                <img src="../images/co2-side.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-        <div class="dashboardBody">
-            <div class="dashboardInnrContainer">
-                <div class="dashboardLeftBody border-end pe-3 col-md-9 col-12">
-                    <div class="actionContainer">
-                        <h3 class="actionTxt mb-0">Actionables</h3>
-                        <div class="actionList">
-                            <ul class="actionUlList px-0">
-                                <li class="actionLi active">
-                                    <a href="../Eva-html/hotels/multi-service.html">
-                                        <div class="actionInnrDiv">
-                                            <img src="../images/add-icon.png" alt="" />
-                                            <h3 class="itemCardTxt mb-0">Let’s Travel...</h3>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="actionLi">
-                                    <a href="#">
-                                        <div class="actionInnrDiv">
-                                            <img src="../images/cross-icon.png" alt="" />
-                                            <h3 class="itemCardTxt mb-0">Change of Plans</h3>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="actionLi">
-                                    <a href="#">
-                                        <div class="actionInnrDiv">
-                                            <img src="../images/jar-icon.png" alt="" />
-                                            <h3 class="itemCardTxt mb-0">Journey Jars</h3>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="actionLi">
-                                    <a href="#">
-                                        <div class="actionInnrDiv">
-                                            <img src="../images/thumbs-icon.png" alt="" />
-                                            <h3 class="itemCardTxt mb-0">Give the Nod</h3>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="actionLi">
-                                    <a href="#">
-                                        <div class="actionInnrDiv">
-                                            <img src="../images/approve-icon.png" alt="" />
-                                            <h3 class="itemCardTxt mb-0">Approval Hunt</h3>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="categoryContainer">
-                        <div class="categoryHeader">
-                            <div>
-                                <h3 class="actionTxt mb-0">Category</h3>
-                            </div>
-                            <div class="arrowBtns">
-                            </div>
-                        </div>
-                        <div id="demos">
-                            <div class="row">
-                                <div class="large-12 columns categorySlider">
-                                    <div class="owl-carousel owl-theme imageSlider">
-                                        <div class="item">
-                                            <a href="flight-search.html">
-                                                <div class="catInnrListWrapper">
-                                                    <div class="flightImg"></div>
-                                                    <div>
-                                                        <h3 class="categoryName mb-0">Flights</h3>
-                                                        <p class="categoryWork mb-0">Sky Soaring</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="item">
-                                            <a href="../Eva-html/hotels/hotel-search.html">
-                                                <div class="catInnrListWrapper">
-                                                    <div class="hotelImg"></div>
-                                                    <div>
-                                                        <h3 class="categoryName mb-0">Hotels</h3>
-                                                        <p class="categoryWork mb-0">Stay in Style</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="item">
-                                            <a href="bus/bus-search.html">
-                                                <div class="catInnrListWrapper">
-                                                    <div class="busImg"></div>
-                                                    <div>
-                                                        <h3 class="categoryName mb-0">Bus</h3>
-                                                        <p class="categoryWork mb-0">Road Tripping</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="item">
-                                            <a href="cabs/cab-search.html">
-                                                <div class="catInnrListWrapper">
-                                                    <div class="cabImg"></div>
-                                                    <div>
-                                                        <h3 class="categoryName mb-0">Cabs</h3>
-                                                        <p class="categoryWork mb-0">City Sprints</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="item">
-                                            <a href="railway/railway-search.html">
-                                                <div class="catInnrListWrapper">
-                                                    <div class="railImg"></div>
-                                                    <div>
-                                                        <h3 class="categoryName mb-0">Rail</h3>
-                                                        <p class="categoryWork mb-0">Rail Rendezvous</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="item">
-                                            <a href="#">
-                                                <div class="catInnrListWrapper">
-                                                    <div class="insuranceImg"></div>
-                                                    <div>
-                                                        <h3 class="categoryName mb-0">Insurance</h3>
-                                                        <p class="categoryWork mb-0">Safety Shields</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="item">
-                                            <a href="currency/forex-currency-search.html">
-                                                <div class="catInnrListWrapper">
-                                                    <div class="currencyImg"></div>
-                                                    <div>
-                                                        <h3 class="categoryName mb-0">Currency</h3>
-                                                        <p class="categoryWork mb-0">Cash Exchange</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="item">
-                                            <a href="visa/visa-search.html">
-                                                <div class="catInnrListWrapper">
-                                                    <div class="visaImg"></div>
-                                                    <div>
-                                                        <h3 class="categoryName mb-0">Visa</h3>
-                                                        <p class="categoryWork mb-0">Passport Partner</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flightInsightContainer">
-                        <div class="categoryHeader">
-                            <div>
-                                <h3 class="actionTxt mb-0">My Flight Insight</h3>
-                            </div>
-                        </div>
-                        <div class="myFlightInsightWrapper">
-                            <div class="flightInsightsInnr">
-                                <div class="insightLeft">
-                                    <img src="../images/icons/vistara_logo.svg" alt="">
-                                </div>
-                                <div class="insightRight">
-                                    <h3 class="mb-0">Vistara</h3>
-                                    <p class="mb-0">200 Flights</p>
-                                </div>
-                            </div>
-                            <div class="flightInsightsInnr">
-                                <div class="insightLeft">
-                                    <img src="../images/icons/akasa_logo.svg" alt="">
-                                </div>
-                                <div class="insightRight">
-                                    <h3 class="mb-0">Akasa Air</h3>
-                                    <p class="mb-0">150 Flights</p>
-                                </div>
-                            </div>
-                            <div class="flightInsightsInnr">
-                                <div class="insightLeft">
-                                    <img src="../images/icons/airIndia_logo.svg" alt="">
-                                </div>
-                                <div class="insightRight">
-                                    <h3 class="mb-0">Air India</h3>
-                                    <p class="mb-0">220 Flights</p>
-                                </div>
-                            </div>
-                            <div class="flightInsightsInnr">
-                                <div class="insightLeft">
-                                    <img src="../images/icons/indigo_logo.svg" alt="">
-                                </div>
-                                <div class="insightRight">
-                                    <h3 class="mb-0">Indigo</h3>
-                                    <p class="mb-0">120 Flights</p>
-                                </div>
-                            </div>
-                            <div class="flightInsightsInnr">
-                                <div class="insightLeft">
-                                    <img src="../images/icons/spicejet_logo.svg" alt="">
-                                </div>
-                                <div class="insightRight">
-                                    <h3 class="mb-0">Spicejet</h3>
-                                    <p class="mb-0">50 Flights</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="flightInsightContainer">
-                        <div class="categoryHeader">
-                            <div>
-                                <h3 class="actionTxt mb-0">My Hotel Insight</h3>
-                            </div>
-                        </div>
-                        <div class="myFlightInsightWrapper">
-                            <div class="flightInsightsInnr">
-                                <div class="insightLeft">
-                                    <img src="../images/icons/taj_hotel.svg" alt="">
-                                </div>
-                                <div class="insightRight">
-                                    <h3 class="mb-0">Taj Hotels</h3>
-                                    <p class="mb-0">20 Bookings</p>
-                                </div>
-                            </div>
-                            <div class="flightInsightsInnr">
-                                <div class="insightLeft">
-                                    <img src="../images/icons/ihcl_hotel.svg" alt="">
-                                </div>
-                                <div class="insightRight">
-                                    <h3 class="mb-0">INDHOTEL</h3>
-                                    <p class="mb-0">5 Bookings</p>
-                                </div>
-                            </div>
-                            <div class="flightInsightsInnr">
-                                <div class="insightLeft">
-                                    <img src="../images/icons/radisonblu_hotel.svg" alt="">
-                                </div>
-                                <div class="insightRight">
-                                    <h3 class="mb-0">Radisson Blu</h3>
-                                    <p class="mb-0">15 Bookings</p>
-                                </div>
-                            </div>
-                            <div class="flightInsightsInnr">
-                                <div class="insightLeft">
-                                    <img src="../images/icons/trident_hotel.svg" alt="">
-                                </div>
-                                <div class="insightRight">
-                                    <h3 class="mb-0">Trident</h3>
-                                    <p class="mb-0">10 Bookings</p>
-                                </div>
-                            </div>
-                            <div class="flightInsightsInnr">
-                                <div class="insightLeft">
-                                    <img src="../images/icons/oberoi_hotel.svg" alt="">
-                                </div>
-                                <div class="insightRight">
-                                    <h3 class="mb-0">The Oberoi</h3>
-                                    <p class="mb-0">12 Bookings</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <div class="travelDetailContainer">
-                        <div class="travelCalenderWrapper col-md-6 col-12">
-                            <h3 class="actionTxt mb-0">My Travel Calender</h3>
-                            <div class="calenderInnrContainer">
-                                <div class="navBtns">
-                                    <button class="upcomingBtn activeNavBtn btn " type="button">Upcoming</button>
-                                    <button class="mnthlyBtn btn " type="button">Monthly</button>
-                                    <button class="dailyBtn btn" type="button">Daily</button>
-                                </div>
-                                <div class="upcomingFlightsWrapper">
-                                    <div class="upcomingInnrWrap">
-                                        <div class="flightDateWrap col-md-2">
-                                            <h3 class="mnthTxt mb-0">Feb</h3>
-                                            <span class="dateTxt mb-0">14</span>
-                                            <h3 class="yearTxt mb-0">2024</h3>
-                                        </div>
-                                        <div class="flightSummary col-md-10">
-                                            <div class="flightRoute">
-                                                <h3 class="flightLocationTxt mb-0">Delhi</h3>
-                                                <img class="routeImg" src="../images/flight-route.png" alt="" />
-                                                <h3 class="flightLocationTxt mb-0">Mumbai</h3>
-                                            </div>
-                                            <div class="flgtNumber">
-                                                <img src="../images/indigo-mini.png" alt="" />
-                                                <h3 class="flightNumberTxt mb-0">IndiGo - 6E 6612</h3>
-                                            </div>
-                                            <div class="viewDetailBtn">
-                                                <a class="mb-0" href="#">View Detail</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="upcomingInnrWrap">
-                                        <div class="flightDateWrap col-md-2">
-                                            <h3 class="mnthTxt mb-0">Feb</h3>
-                                            <span class="dateTxt mb-0">14</span>
-                                            <h3 class="yearTxt mb-0">2024</h3>
-                                        </div>
-                                        <div class="flightSummary col-md-10">
-                                            <div class="flightRoute">
-                                                <h3 class="flightLocationTxt mb-0">Delhi</h3>
-                                                <img class="routeImg" src="../images/flight-route.png" alt="" />
-                                                <h3 class="flightLocationTxt mb-0 ">Mumbai</h3>
-                                            </div>
-                                            <div class="flgtNumber">
-                                                <img src="../images/indigo-mini.png" alt="" />
-                                                <h3 class="flightNumberTxt mb-0">IndiGo - 6E 6612</h3>
-                                            </div>
-                                            <div class="viewDetailBtn">
-                                                <a class="mb-0" href="#">View Detail</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="upcomingInnrWrap">
-                                        <div class="flightDateWrap col-md-2">
-                                            <h3 class="mnthTxt mb-0">Feb</h3>
-                                            <span class="dateTxt mb-0">14</span>
-                                            <h3 class="yearTxt mb-0">2024</h3>
-                                        </div>
-                                        <div class="flightSummary col-md-10">
-                                            <div class="flightRoute">
-                                                <h3 class="flightLocationTxt mb-0">Delhi</h3>
-                                                <img class="routeImg" src="../images/flight-route.png" alt="" />
-                                                <h3 class="flightLocationTxt mb-0">Mumbai</h3>
-                                            </div>
-                                            <div class="flgtNumber">
-                                                <img src="../images/indigo-mini.png" alt="" />
-                                                <h3 class="flightNumberTxt mb-0">IndiGo - 6E 6612</h3>
-                                            </div>
-                                            <div class="viewDetailBtn">
-                                                <a href="#">View Detail</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="upcomingInnrWrap">
-                                        <div class="flightDateWrap col-md-2">
-                                            <h3 class="mnthTxt mb-0">Feb</h3>
-                                            <span class="dateTxt mb-0">14</span>
-                                            <h3 class="yearTxt mb-0">2024</h3>
-                                        </div>
-                                        <div class="flightSummary col-md-10">
-                                            <div class="flightRoute">
-                                                <h3 class="flightLocationTxt mb-0">Delhi</h3>
-                                                <img class="routeImg" src="../images/flight-route.png" alt="" />
-                                                <h3 class="flightLocationTxt mb-0">Mumbai</h3>
-                                            </div>
-                                            <div class="flgtNumber">
-                                                <img src="../images/indigo-mini.png" alt="" />
-                                                <h3 class="flightNumberTxt mb-0">IndiGo - 6E 6612</h3>
-                                            </div>
-                                            <div class="viewDetailBtn">
-                                                <a class="mb-0" href="#">View Detail</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="travelAlertWrapper col-md-6 col-12">
-                            <h3 class="actionTxt mb-0">My Travel Alert</h3>
-                            <div class="alertInnrContainer">
-                                <div class="alertBoxInnrCont">
-                                    <div class="alertBoxWrapper">
-                                        <div class="alertBox1">
-                                            <div class="alertBoxInnr1">
-                                                <img src="../images/alert-indigo-logo.png" alt="" />
-                                                <div class="alertSubBox">
-                                                    <h3 class="flightNumberTxt mb-0">IndiGo - 6E 6612</h3>
-                                                    <div class="alertSubInnrBox">
-                                                        <h4 class="locationTxt mb-0">New York</h4>
-                                                        <img class="sideArrowImg" src="../images/Group.png" alt="" />
-                                                        <h4 class="locationTxt mb-0">London</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="alertBoxInnr2">
-                                                <img src="../images/refresh 1.png" alt="" />
-                                                <h3 class="refreshTxt mb-0">Refresh</h3>
-                                            </div>
-                                        </div>
-                                        <div class="alertBox2">
-                                            <h3 class="flightDelayTxt mb-0">20 Mins Delay</h3>
-                                            <p class="flightTimeTxt mb-0">
-                                                Last Updated: <span>07:42 PM</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="alertBoxWrapper">
-                                        <div class="alertBox1">
-                                            <div class="alertBoxInnr1">
-                                                <img src="../images/alert-air-logo.png" alt="" />
-                                                <div class="alertSubBox">
-                                                    <h3 class="flightNumberTxt mb-0">Air India - 6A 2324</h3>
-                                                    <div class="alertSubInnrBox">
-                                                        <h4 class="locationTxt mb-0">New York</h4>
-                                                        <img class="sideArrowImg" src="../images/Group.png" alt="" />
-                                                        <h4 class="locationTxt mb-0">London</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="alertBoxInnr2">
-                                                <img src="../images/refresh 1.png" alt="" />
-                                                <h3 class="refreshTxt mb-0">Refresh</h3>
-                                            </div>
-                                        </div>
-                                        <div class="alertBox2">
-                                            <h3 class="onTimeTxt mb-0">20 Mins Delay</h3>
-                                            <p class="flightTimeTxt mb-0">
-                                                Last Updated: <span>07:42 PM</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="alertBoxWrapper">
-                                        <div class="alertBox1">
-                                            <div class="alertBoxInnr1">
-                                                <img src="../images/alert-vistara-logo.png" alt="" />
-                                                <div class="alertSubBox">
-                                                    <h3 class="flightNumberTxt mb-0">Vistara - 4V 3432</h3>
-                                                    <div class="alertSubInnrBox">
-                                                        <h4 class="locationTxt mb-0">New York</h4>
-                                                        <img class="sideArrowImg" src="../images/Group.png" alt="" />
-                                                        <h4 class="locationTxt mb-0">London</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="alertBoxInnr2">
-                                                <img src="../images/refresh 1.png" alt="" />
-                                                <h3 class="refreshTxt mb-0">Refresh</h3>
-                                            </div>
-                                        </div>
-                                        <div class="alertBox2">
-                                            <h3 class="flightDelayTxt mb-0">20 Mins Delay</h3>
-                                            <p class="flightTimeTxt mb-0">
-                                                Last Updated: <span>07:42 PM</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="alertBoxWrapper">
-                                        <div class="alertBox1">
-                                            <div class="alertBoxInnr1">
-                                                <img src="../images/alert-vistara-logo.png" alt="" />
-                                                <div class="alertSubBox">
-                                                    <h3 class="flightNumberTxt mb-0">Vistara - 4V 3432</h3>
-                                                    <div class="alertSubInnrBox">
-                                                        <h4 class="locationTxt mb-0">New York</h4>
-                                                        <img class="sideArrowImg" src="../images/Group.png" alt="" />
-                                                        <h4 class="locationTxt mb-0">London</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="alertBoxInnr2">
-                                                <img src="../images/refresh 1.png" alt="" />
-                                                <h3 class="refreshTxt mb-0">Refresh</h3>
-                                            </div>
-                                        </div>
-                                        <div class="alertBox2">
-                                            <h3 class="flightDelayTxt mb-0">20 Mins Delay</h3>
-                                            <p class="flightTimeTxt mb-0">
-                                                Last Updated: <span>07:42 PM</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="dashboardRightBody ps-4 col-md-3 col-12">
-                    <div class="totalAmtContainer">
-                        <h3 class="actionTxt mb-0">My Total spend(INR)</h3>
-                        <div class="graphWrapper">
-                            <div class="graphBox1">
-                                <img src="../images/Graph.png" alt="" />
-                            </div>
-                            <div class="graphBox2">
-                                <div class="monthWrapper">
-                                    <select class="monthDisplay">
-                                        <option value="">Last 6 months</option>
-                                        <option value="apples">Last 1 year</option>
-                                        <option value="bananas">Last 2 year</option>
-                                        <option value="oranges">Last 3 year</option>
-                                    </select>
-                                </div>
-                                <div class="calculateAmt clr1">
-                                    <div class="amtCnt1">
-                                        <span class="graphClr graphClr1"></span>
-                                        <h3 class="targetTxt mb-0">Flights:</h3>
-                                    </div>
-                                    <div class="amtCnt2">
-                                        <p class="targetAmtTxt mb-0">₹ 54,765</p>
-                                    </div>
-                                </div>
-                                <div class="calculateAmt clr2">
-                                    <div class="amtCnt1">
-                                        <span class="graphClr graphClr2"></span>
-                                        <h3 class="targetTxt mb-0">Bus:</h3>
-                                    </div>
-                                    <div class="amtCnt2">
-                                        <p class="targetAmtTxt mb-0">₹ 12,654</p>
-                                    </div>
-                                </div>
-                                <div class="calculateAmt clr3">
-                                    <div class="amtCnt1">
-                                        <span class="graphClr graphClr3"></span>
-                                        <h3 class="targetTxt mb-0">Hotels:</h3>
-                                    </div>
-                                    <div class="amtCnt2">
-                                        <p class="targetAmtTxt mb-0">₹ 8,123</p>
-                                    </div>
-                                </div>
-                                <div class="calculateAmt clr4">
-                                    <div class="amtCnt1">
-                                        <span class="graphClr graphClr4"></span>
-                                        <h3 class="targetTxt mb-0">Cabs:</h3>
-                                    </div>
-                                    <div class="amtCnt2">
-                                        <p class="targetAmtTxt mb-0">₹ 2,276</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="leaderboardContainer">
-                        <h3 class="actionTxt mb-0">Leaderboard</h3>
-                        <div class="leaderBoardWrapper">
-                            <div class="leaderInnrBox1">
-                                <div class="leaderSubBox1">
-                                    <img src="../images/level3.png" alt="" />
-                                    <div>
-                                        <h3 class="levelTxt mb-0">Level 3</h3>
-                                        <p class="pointsTxt mb-0">3,567 points</p>
-                                    </div>
-                                </div>
-                                <div class="leaderSubBox2">
-                                    <img src="../images/user-icon.png" alt="" />
-                                </div>
-                            </div>
-                            <div class="leaderInnrBox2">
-                                <div class="progressBarContainer">
-                                    <div class="prgrssBar prgrssPercent"></div>
-                                </div>
-                                <div class="levelContnt">
-                                    <h3 class="reachTxt mb-0">Points to reach level 4:</h3>
-                                    <p class="cntTxt mb-0">500/1000</p>
-                                </div>
-                            </div>
-                            <div class="leaderInnrBox3">
-                                <div class="unlockBlockContainer">
-                                    <div class="unlockSubBox1">
-                                        <img src="../images/level4.png" alt="" />
-                                    </div>
-                                    <div class="unlockSubBox1">
-                                        <h3 class="ext1 mb-0">Level 4</h3>
-                                        <p class="ext2 mb-0">Earn 1000 points to unlock</p>
-                                    </div>
-                                </div>
-                                <div class="unlockBlockContainer">
-                                    <div class="unlockSubBox1">
-                                        <img src="../images/level5.png" alt="" />
-                                    </div>
-                                    <div class="unlockSubBox1">
-                                        <h3 class="ext1 mb-0">Level 5</h3>
-                                        <p class="ext2 mb-0">Earn 1500 points to unlock</p>
-                                    </div>
-                                </div>
-                                <div class="unlockBlockContainer">
-                                    <div class="unlockSubBox1">
-                                        <img src="../images/level6.png" alt="" />
-                                    </div>
-                                    <div class="unlockSubBox1">
-                                        <h3 class="ext1 mb-0">Level 6</h3>
-                                        <p class="ext2 mb-0">Earn 2000 points to unlock</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tripSummaryContainer">
-                        <div class="categoryHeader">
-                            <div>
-                                <h3 class="actionTxt mb-0">My Trip Summary</h3>
-                            </div>
-                            <div class="viewAllBtn">
-                                <a class="viewAllTxt mb-0" href="#">View All <img src="../images/Arrows.png"
-                                        alt="" /></a>
-                            </div>
-                        </div>
-                        <div class="summaryBox">
-                            <div class="alertBoxWrapper tripCont">
-                                <div class="alertBox1">
-                                    <div class="alertBoxInnr1">
-                                        <img src="../images/via-flight.png" alt="" />
-                                        <div class="alertSubBox">
-                                            <div class="alertSubInnrBox">
-                                                <h4 class="flightSummTxt mb-0">New York</h4>
-                                                <img class="sideArrowImg" src="../images/Group 141.png" alt="" />
-                                                <h4 class="flightSummTxt mb-0">London</h4>
-                                            </div>
-                                            <div class="domContnt">
-                                                <h3 class="lightTxt mb-0">Domestic One Way</h3>
-                                                <p class="lightTxt mb-0">
-                                                    Legal Entity: STR THOMASCOOK EVA
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="alertBox2">
-                                    <h3 class="flightDelayTxt pendingApprovalTxt mb-0">
-                                        Pending Approval
-                                    </h3>
-                                    <p class="flightTimeTxt mb-0">Trip ID:<span>124030</span></p>
-                                </div>
-                            </div>
-                            <div class="alertBoxWrapper tripCont">
-                                <div class="alertBox1">
-                                    <div class="alertBoxInnr1">
-                                        <img src="../images/via-bus.png" alt="" />
-                                        <div class="alertSubBox">
-                                            <div class="alertSubInnrBox">
-                                                <h4 class="flightSummTxt mb-0">Delhi</h4>
-                                                <img class="sideArrowImg" src="../images/Group 141.png" alt="" />
-                                                <h4 class="flightSummTxt mb-0">Mumbai</h4>
-                                            </div>
-                                            <div class="domContnt">
-                                                <h3 class="lightTxt mb-0">A/C Sleeper</h3>
-                                                <p class="lightTxt mb-0">
-                                                    Legal Entity: STR THOMASCOOK EVA
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="alertBox2">
-                                    <h3 class="flightDelayTxt pendingApprovalTxt mb-0">
-                                        Pending Approval
-                                    </h3>
-                                    <p class="flightTimeTxt mb-0">Trip ID:<span>124030</span></p>
-                                </div>
-                            </div>
-                            <div class="alertBoxWrapper tripCont">
-                                <div class="alertBox1">
-                                    <div class="alertBoxInnr1">
-                                        <img src="../images/via-bus.png" alt="" />
-                                        <div class="alertSubBox">
-                                            <div class="alertSubInnrBox">
-                                                <h4 class="flightSummTxt mb-0">Mumbai</h4>
-                                                <img class="sideArrowImg" src="../images/Group 141.png" alt="" />
-                                                <h4 class="flightSummTxt mb-0">Bengaluru</h4>
-                                            </div>
-                                            <div class="domContnt">
-                                                <h3 class="lightTxt mb-0">Domestic One Way</h3>
-                                                <p class="lightTxt mb-0">
-                                                    Legal Entity: STR THOMASCOOK EVA
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="alertBox2">
-                                    <h3 class="flightDelayTxt pendingApprovalTxt mb-0">
-                                        Pending Approval
-                                    </h3>
-                                    <p class="flightTimeTxt mb-0">Trip ID:<span>124030</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <nav role="navigation" class="hamburger">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <ul id="hamburgerMenu" class="px-0">
+            <a href="index.html">
+              <li>Dashboard</li>
+            </a>
+            <a href="flight-search.html">
+              <li>New Booking</li>
+            </a>
+            <a href="MyTrips/mytrips.html">
+              <li>My Trips</li>
+            </a>
+            <a href="MyApprovals/myapprovals.html">
+              <li>Approvals</li>
+            </a>
+            <a href="#">
+              <li>Analytics</li>
+            </a>
+          </ul>
         </div>
-    </section>
+      </nav>
+    </nav>
+  </header>
+  <section class="dashboardMainContainer">
+    <div class="dashboardBanner">
+      <img class="bannrImg" src="../images/banner/dashboard-banner.svg" alt="" />
+      <div class="bannrDetail">
+        <div class="bannrInnrLeft">
+          <h1 class="mrngTxt mb-0">Good Morning, <span> Albert!</span></h1>
+          <p class="dataTxt mb-0">
+            Find out the data of your travel & follow it over time
+          </p>
+        </div>
+        <div class="bannrInnrRight">
+          <div class="locationReport">
+            <div class="locationSelct1 ">
+              <img src="../images/location.png" alt="" />
+            </div>
+            <div class="locationSelct2">
+              <select class="locationWrap">
+                <option value="">New Delhi</option>
+                <option value="apples">Chennai</option>
+                <option value="bananas">Bengaluru</option>
+                <option value="oranges">Mumbai</option>
+              </select>
+            </div>
+          </div>
+          <div class="weatherReport border-start ps-3">
+            <img src="../images/cloudy-icon.png" alt="" />
+            <p class="degreeTxt mb-0">28&deg; C <span>Cloudy</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="overviewBoxContainer">
+        <div class="overviewInnrContainer">
+          <div class="boxTopContainer">
+            <h3>Overview</h3>
+            <div class="monthWrapper">
+              <select class="">
+                <option value="">Last 6 months</option>
+                <option value="apples">Last 1 year</option>
+                <option value="bananas">Last 2 year</option>
+                <option value="oranges">Last 3 year</option>
+              </select>
+            </div>
+          </div>
+          <div class="boxBottomContainer flex-wrap">
+            <div class="boxItem col boxColr1">
+              <div>
+                <img src="../images/trip-frame.png" alt="" />
+              </div>
+              <div class="boxInnrItems">
+                <div class="tripDetailTxts">
+                  <h3 class="tripCount mb-0">240</h3>
+                  <p class="tripStatus mb-0">Trips Completed</p>
+                </div>
+
+                <div class="tooltipContainer tooltipImg1">
+                  <span class="tooltiptext mb-0">Trips Completed is your adventure score count your
+                    journeys, embrace the explorer within.</span>
+                </div>
+              </div>
+              <div class="sideImg">
+                <img src="../images/trip-side.png" alt="" />
+              </div>
+            </div>
+            <div class="boxItem col boxColr2">
+              <div>
+                <img src="../images/distance-frame.png" alt="" />
+              </div>
+              <div class="boxInnrItems">
+                <div class="tripDetailTxts">
+                  <h3 class="tripCount mb-0">8,256 kms</h3>
+                  <p class="tripStatus mb-0">Distance Travelled</p>
+                </div>
+                <div class="tooltipContainer tooltipImg2">
+                  <span class="tooltiptext mb-0">Trips Completed is your adventure score count your
+                    journeys, embrace the explorer within.</span>
+                </div>
+              </div>
+              <div class="sideImg">
+                <img src="../images/distance-side.png" alt="" />
+              </div>
+            </div>
+            <div class="boxItem col boxColr3">
+              <div>
+                <img src="../images/avgtrip- frame.png" alt="" />
+              </div>
+              <div class="boxInnrItems">
+                <div class="tripDetailTxts">
+                  <h3 class="tripCount mb-0">3.5 days</h3>
+                  <p class="tripStatus mb-0">Avg Trip Duration</p>
+                </div>
+                <div class="tooltipContainer tooltipImg3">
+                  <span class="tooltiptext mb-0">Trips Completed is your adventure score count your
+                    journeys, embrace the explorer within.</span>
+                </div>
+              </div>
+              <div class="sideImg">
+                <img src="../images/avgtrip-side.png" alt="" />
+              </div>
+            </div>
+            <div class="boxItem col boxColr4">
+              <div>
+                <img src="../images/co2-frame.png" alt="" />
+              </div>
+              <div class="boxInnrItems">
+                <div class="tripDetailTxts">
+                  <h3 class="tripCount mb-0">1.2 mt</h3>
+                  <p class="tripStatus mb-0">CO2 Emissions Saved</p>
+                </div>
+                <div class="tooltipContainer tooltipImg4">
+                  <span class="tooltiptext mb-0">Trips Completed is your adventure score count your
+                    journeys, embrace the explorer within.</span>
+                </div>
+              </div>
+              <div class="sideImg">
+                <img src="../images/co2-side.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dashboardBody">
+      <div class="dashboardInnrContainer">
+        <div class="dashboardLeftBody border-end pe-3 col-md-9 col-12">
+          <div class="actionContainer">
+            <h3 class="actionTxt mb-0">Actionables</h3>
+            <div class="actionList">
+              <ul class="actionUlList px-0">
+                <li class="actionLi active">
+                  <a href="../Eva-html/hotels/multi-service.html">
+                    <div class="actionInnrDiv">
+                      <img src="../images/add-icon.png" alt="" />
+                      <h3 class="itemCardTxt mb-0">Let’s Travel...</h3>
+                    </div>
+                  </a>
+                </li>
+                <li class="actionLi">
+                  <a href="#">
+                    <div class="actionInnrDiv">
+                      <img src="../images/cross-icon.png" alt="" />
+                      <h3 class="itemCardTxt mb-0">Change of Plans</h3>
+                    </div>
+                  </a>
+                </li>
+                <li class="actionLi">
+                  <a href="#">
+                    <div class="actionInnrDiv">
+                      <img src="../images/jar-icon.png" alt="" />
+                      <h3 class="itemCardTxt mb-0">Journey Jars</h3>
+                    </div>
+                  </a>
+                </li>
+                <li class="actionLi">
+                  <a href="#">
+                    <div class="actionInnrDiv">
+                      <img src="../images/thumbs-icon.png" alt="" />
+                      <h3 class="itemCardTxt mb-0">Give the Nod</h3>
+                    </div>
+                  </a>
+                </li>
+                <li class="actionLi">
+                  <a href="#">
+                    <div class="actionInnrDiv">
+                      <img src="../images/approve-icon.png" alt="" />
+                      <h3 class="itemCardTxt mb-0">Approval Hunt</h3>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="categoryContainer">
+            <div class="categoryHeader">
+              <div>
+                <h3 class="actionTxt mb-0">Category</h3>
+              </div>
+              <div class="arrowBtns">
+              </div>
+            </div>
+            <div id="demos">
+              <div class="row">
+                <div class="large-12 columns categorySlider">
+                  <div class="owl-carousel owl-theme imageSlider">
+                    <div class="item">
+                      <a href="flight-search.html">
+                        <div class="catInnrListWrapper">
+                          <div class="flightImg"></div>
+                          <div>
+                            <h3 class="categoryName mb-0">Flights</h3>
+                            <p class="categoryWork mb-0">Sky Soaring</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="item">
+                      <a href="../Eva-html/hotels/hotel-search.html">
+                        <div class="catInnrListWrapper">
+                          <div class="hotelImg"></div>
+                          <div>
+                            <h3 class="categoryName mb-0">Hotels</h3>
+                            <p class="categoryWork mb-0">Stay in Style</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="item">
+                      <a href="bus/bus-search.html">
+                        <div class="catInnrListWrapper">
+                          <div class="busImg"></div>
+                          <div>
+                            <h3 class="categoryName mb-0">Bus</h3>
+                            <p class="categoryWork mb-0">Road Tripping</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="item">
+                      <a href="cabs/cab-search.html">
+                        <div class="catInnrListWrapper">
+                          <div class="cabImg"></div>
+                          <div>
+                            <h3 class="categoryName mb-0">Cabs</h3>
+                            <p class="categoryWork mb-0">City Sprints</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="item">
+                      <a href="railway/railway-search.html">
+                        <div class="catInnrListWrapper">
+                          <div class="railImg"></div>
+                          <div>
+                            <h3 class="categoryName mb-0">Rail</h3>
+                            <p class="categoryWork mb-0">Rail Rendezvous</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="item">
+                      <a href="#">
+                        <div class="catInnrListWrapper">
+                          <div class="insuranceImg"></div>
+                          <div>
+                            <h3 class="categoryName mb-0">Insurance</h3>
+                            <p class="categoryWork mb-0">Safety Shields</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="item">
+                      <a href="currency/forex-currency-search.html">
+                        <div class="catInnrListWrapper">
+                          <div class="currencyImg"></div>
+                          <div>
+                            <h3 class="categoryName mb-0">Currency</h3>
+                            <p class="categoryWork mb-0">Cash Exchange</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="item">
+                      <a href="visa/visa-search.html">
+                        <div class="catInnrListWrapper">
+                          <div class="visaImg"></div>
+                          <div>
+                            <h3 class="categoryName mb-0">Visa</h3>
+                            <p class="categoryWork mb-0">Passport Partner</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flightInsightContainer">
+            <div class="categoryHeader">
+              <div>
+                <h3 class="actionTxt mb-0">My Flight Insight</h3>
+              </div>
+            </div>
+            <div class="myFlightInsightWrapper">
+              <div class="flightInsightsInnr">
+                <div class="insightLeft">
+                  <img src="../images/icons/vistara_logo.svg" alt="">
+                </div>
+                <div class="insightRight">
+                  <h3 class="mb-0">Vistara</h3>
+                  <p class="mb-0">200 Flights</p>
+                </div>
+              </div>
+              <div class="flightInsightsInnr">
+                <div class="insightLeft">
+                  <img src="../images/icons/akasa_logo.svg" alt="">
+                </div>
+                <div class="insightRight">
+                  <h3 class="mb-0">Akasa Air</h3>
+                  <p class="mb-0">150 Flights</p>
+                </div>
+              </div>
+              <div class="flightInsightsInnr">
+                <div class="insightLeft">
+                  <img src="../images/icons/airIndia_logo.svg" alt="">
+                </div>
+                <div class="insightRight">
+                  <h3 class="mb-0">Air India</h3>
+                  <p class="mb-0">220 Flights</p>
+                </div>
+              </div>
+              <div class="flightInsightsInnr">
+                <div class="insightLeft">
+                  <img src="../images/icons/indigo_logo.svg" alt="">
+                </div>
+                <div class="insightRight">
+                  <h3 class="mb-0">Indigo</h3>
+                  <p class="mb-0">120 Flights</p>
+                </div>
+              </div>
+              <div class="flightInsightsInnr">
+                <div class="insightLeft">
+                  <img src="../images/icons/spicejet_logo.svg" alt="">
+                </div>
+                <div class="insightRight">
+                  <h3 class="mb-0">Spicejet</h3>
+                  <p class="mb-0">50 Flights</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="flightInsightContainer">
+            <div class="categoryHeader">
+              <div>
+                <h3 class="actionTxt mb-0">My Hotel Insight</h3>
+              </div>
+            </div>
+            <div class="myFlightInsightWrapper">
+              <div class="flightInsightsInnr">
+                <div class="insightLeft">
+                  <img src="../images/icons/taj_hotel.svg" alt="">
+                </div>
+                <div class="insightRight">
+                  <h3 class="mb-0">Taj Hotels</h3>
+                  <p class="mb-0">20 Bookings</p>
+                </div>
+              </div>
+              <div class="flightInsightsInnr">
+                <div class="insightLeft">
+                  <img src="../images/icons/ihcl_hotel.svg" alt="">
+                </div>
+                <div class="insightRight">
+                  <h3 class="mb-0">INDHOTEL</h3>
+                  <p class="mb-0">5 Bookings</p>
+                </div>
+              </div>
+              <div class="flightInsightsInnr">
+                <div class="insightLeft">
+                  <img src="../images/icons/radisonblu_hotel.svg" alt="">
+                </div>
+                <div class="insightRight">
+                  <h3 class="mb-0">Radisson Blu</h3>
+                  <p class="mb-0">15 Bookings</p>
+                </div>
+              </div>
+              <div class="flightInsightsInnr">
+                <div class="insightLeft">
+                  <img src="../images/icons/trident_hotel.svg" alt="">
+                </div>
+                <div class="insightRight">
+                  <h3 class="mb-0">Trident</h3>
+                  <p class="mb-0">10 Bookings</p>
+                </div>
+              </div>
+              <div class="flightInsightsInnr">
+                <div class="insightLeft">
+                  <img src="../images/icons/oberoi_hotel.svg" alt="">
+                </div>
+                <div class="insightRight">
+                  <h3 class="mb-0">The Oberoi</h3>
+                  <p class="mb-0">12 Bookings</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="travelDetailContainer">
+            <div class="travelCalenderWrapper col-md-6 col-12">
+              <h3 class="actionTxt mb-0">My Travel Calender</h3>
+              <div class="calenderInnrContainer">
+                <div class="navBtns">
+                  <button class="upcomingBtn activeNavBtn btn " type="button">Upcoming</button>
+                  <button class="mnthlyBtn btn " type="button">Monthly</button>
+                  <button class="dailyBtn btn" type="button">Daily</button>
+                </div>
+                <div class="upcomingFlightsWrapper">
+                  <div class="upcomingInnrWrap">
+                    <div class="flightDateWrap col-md-2">
+                      <h3 class="mnthTxt mb-0">Feb</h3>
+                      <span class="dateTxt mb-0">14</span>
+                      <h3 class="yearTxt mb-0">2024</h3>
+                    </div>
+                    <div class="flightSummary col-md-10">
+                      <div class="flightRoute">
+                        <h3 class="flightLocationTxt mb-0">Delhi</h3>
+                        <img class="routeImg" src="../images/flight-route.png" alt="" />
+                        <h3 class="flightLocationTxt mb-0">Mumbai</h3>
+                      </div>
+                      <div class="flgtNumber">
+                        <img src="../images/indigo-mini.png" alt="" />
+                        <h3 class="flightNumberTxt mb-0">IndiGo - 6E 6612</h3>
+                      </div>
+                      <div class="viewDetailBtn">
+                        <a class="mb-0" href="#">View Detail</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="upcomingInnrWrap">
+                    <div class="flightDateWrap col-md-2">
+                      <h3 class="mnthTxt mb-0">Feb</h3>
+                      <span class="dateTxt mb-0">14</span>
+                      <h3 class="yearTxt mb-0">2024</h3>
+                    </div>
+                    <div class="flightSummary col-md-10">
+                      <div class="flightRoute">
+                        <h3 class="flightLocationTxt mb-0">Delhi</h3>
+                        <img class="routeImg" src="../images/flight-route.png" alt="" />
+                        <h3 class="flightLocationTxt mb-0 ">Mumbai</h3>
+                      </div>
+                      <div class="flgtNumber">
+                        <img src="../images/indigo-mini.png" alt="" />
+                        <h3 class="flightNumberTxt mb-0">IndiGo - 6E 6612</h3>
+                      </div>
+                      <div class="viewDetailBtn">
+                        <a class="mb-0" href="#">View Detail</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="upcomingInnrWrap">
+                    <div class="flightDateWrap col-md-2">
+                      <h3 class="mnthTxt mb-0">Feb</h3>
+                      <span class="dateTxt mb-0">14</span>
+                      <h3 class="yearTxt mb-0">2024</h3>
+                    </div>
+                    <div class="flightSummary col-md-10">
+                      <div class="flightRoute">
+                        <h3 class="flightLocationTxt mb-0">Delhi</h3>
+                        <img class="routeImg" src="../images/flight-route.png" alt="" />
+                        <h3 class="flightLocationTxt mb-0">Mumbai</h3>
+                      </div>
+                      <div class="flgtNumber">
+                        <img src="../images/indigo-mini.png" alt="" />
+                        <h3 class="flightNumberTxt mb-0">IndiGo - 6E 6612</h3>
+                      </div>
+                      <div class="viewDetailBtn">
+                        <a href="#">View Detail</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="upcomingInnrWrap">
+                    <div class="flightDateWrap col-md-2">
+                      <h3 class="mnthTxt mb-0">Feb</h3>
+                      <span class="dateTxt mb-0">14</span>
+                      <h3 class="yearTxt mb-0">2024</h3>
+                    </div>
+                    <div class="flightSummary col-md-10">
+                      <div class="flightRoute">
+                        <h3 class="flightLocationTxt mb-0">Delhi</h3>
+                        <img class="routeImg" src="../images/flight-route.png" alt="" />
+                        <h3 class="flightLocationTxt mb-0">Mumbai</h3>
+                      </div>
+                      <div class="flgtNumber">
+                        <img src="../images/indigo-mini.png" alt="" />
+                        <h3 class="flightNumberTxt mb-0">IndiGo - 6E 6612</h3>
+                      </div>
+                      <div class="viewDetailBtn">
+                        <a class="mb-0" href="#">View Detail</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="travelAlertWrapper col-md-6 col-12">
+              <h3 class="actionTxt mb-0">My Travel Alert</h3>
+              <div class="alertInnrContainer">
+                <div class="alertBoxInnrCont">
+                  <div class="alertBoxWrapper">
+                    <div class="alertBox1">
+                      <div class="alertBoxInnr1">
+                        <img src="../images/alert-indigo-logo.png" alt="" />
+                        <div class="alertSubBox">
+                          <h3 class="flightNumberTxt mb-0">IndiGo - 6E 6612</h3>
+                          <div class="alertSubInnrBox">
+                            <h4 class="locationTxt mb-0">New York</h4>
+                            <img class="sideArrowImg" src="../images/Group.png" alt="" />
+                            <h4 class="locationTxt mb-0">London</h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="alertBoxInnr2">
+                        <img src="../images/refresh 1.png" alt="" />
+                        <h3 class="refreshTxt mb-0">Refresh</h3>
+                      </div>
+                    </div>
+                    <div class="alertBox2">
+                      <h3 class="flightDelayTxt mb-0">20 Mins Delay</h3>
+                      <p class="flightTimeTxt mb-0">
+                        Last Updated: <span>07:42 PM</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="alertBoxWrapper">
+                    <div class="alertBox1">
+                      <div class="alertBoxInnr1">
+                        <img src="../images/alert-air-logo.png" alt="" />
+                        <div class="alertSubBox">
+                          <h3 class="flightNumberTxt mb-0">Air India - 6A 2324</h3>
+                          <div class="alertSubInnrBox">
+                            <h4 class="locationTxt mb-0">New York</h4>
+                            <img class="sideArrowImg" src="../images/Group.png" alt="" />
+                            <h4 class="locationTxt mb-0">London</h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="alertBoxInnr2">
+                        <img src="../images/refresh 1.png" alt="" />
+                        <h3 class="refreshTxt mb-0">Refresh</h3>
+                      </div>
+                    </div>
+                    <div class="alertBox2">
+                      <h3 class="onTimeTxt mb-0">20 Mins Delay</h3>
+                      <p class="flightTimeTxt mb-0">
+                        Last Updated: <span>07:42 PM</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="alertBoxWrapper">
+                    <div class="alertBox1">
+                      <div class="alertBoxInnr1">
+                        <img src="../images/alert-vistara-logo.png" alt="" />
+                        <div class="alertSubBox">
+                          <h3 class="flightNumberTxt mb-0">Vistara - 4V 3432</h3>
+                          <div class="alertSubInnrBox">
+                            <h4 class="locationTxt mb-0">New York</h4>
+                            <img class="sideArrowImg" src="../images/Group.png" alt="" />
+                            <h4 class="locationTxt mb-0">London</h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="alertBoxInnr2">
+                        <img src="../images/refresh 1.png" alt="" />
+                        <h3 class="refreshTxt mb-0">Refresh</h3>
+                      </div>
+                    </div>
+                    <div class="alertBox2">
+                      <h3 class="flightDelayTxt mb-0">20 Mins Delay</h3>
+                      <p class="flightTimeTxt mb-0">
+                        Last Updated: <span>07:42 PM</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="alertBoxWrapper">
+                    <div class="alertBox1">
+                      <div class="alertBoxInnr1">
+                        <img src="../images/alert-vistara-logo.png" alt="" />
+                        <div class="alertSubBox">
+                          <h3 class="flightNumberTxt mb-0">Vistara - 4V 3432</h3>
+                          <div class="alertSubInnrBox">
+                            <h4 class="locationTxt mb-0">New York</h4>
+                            <img class="sideArrowImg" src="../images/Group.png" alt="" />
+                            <h4 class="locationTxt mb-0">London</h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="alertBoxInnr2">
+                        <img src="../images/refresh 1.png" alt="" />
+                        <h3 class="refreshTxt mb-0">Refresh</h3>
+                      </div>
+                    </div>
+                    <div class="alertBox2">
+                      <h3 class="flightDelayTxt mb-0">20 Mins Delay</h3>
+                      <p class="flightTimeTxt mb-0">
+                        Last Updated: <span>07:42 PM</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dashboardRightBody ps-4 col-md-3 col-12">
+          <div class="totalAmtContainer">
+            <h3 class="actionTxt mb-0">My Total spend(INR)</h3>
+            <div class="graphWrapper">
+              <div class="graphBox1">
+                <img src="../images/Graph.png" alt="" />
+              </div>
+              <div class="graphBox2">
+                <div class="monthWrapper">
+                  <select class="monthDisplay">
+                    <option value="">Last 6 months</option>
+                    <option value="apples">Last 1 year</option>
+                    <option value="bananas">Last 2 year</option>
+                    <option value="oranges">Last 3 year</option>
+                  </select>
+                </div>
+                <div class="calculateAmt clr1">
+                  <div class="amtCnt1">
+                    <span class="graphClr graphClr1"></span>
+                    <h3 class="targetTxt mb-0">Flights:</h3>
+                  </div>
+                  <div class="amtCnt2">
+                    <p class="targetAmtTxt mb-0">₹ 54,765</p>
+                  </div>
+                </div>
+                <div class="calculateAmt clr2">
+                  <div class="amtCnt1">
+                    <span class="graphClr graphClr2"></span>
+                    <h3 class="targetTxt mb-0">Bus:</h3>
+                  </div>
+                  <div class="amtCnt2">
+                    <p class="targetAmtTxt mb-0">₹ 12,654</p>
+                  </div>
+                </div>
+                <div class="calculateAmt clr3">
+                  <div class="amtCnt1">
+                    <span class="graphClr graphClr3"></span>
+                    <h3 class="targetTxt mb-0">Hotels:</h3>
+                  </div>
+                  <div class="amtCnt2">
+                    <p class="targetAmtTxt mb-0">₹ 8,123</p>
+                  </div>
+                </div>
+                <div class="calculateAmt clr4">
+                  <div class="amtCnt1">
+                    <span class="graphClr graphClr4"></span>
+                    <h3 class="targetTxt mb-0">Cabs:</h3>
+                  </div>
+                  <div class="amtCnt2">
+                    <p class="targetAmtTxt mb-0">₹ 2,276</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="leaderboardContainer">
+            <h3 class="actionTxt mb-0">Leaderboard</h3>
+            <div class="leaderBoardWrapper">
+              <div class="leaderInnrBox1">
+                <div class="leaderSubBox1">
+                  <img src="../images/level3.png" alt="" />
+                  <div>
+                    <h3 class="levelTxt mb-0">Level 3</h3>
+                    <p class="pointsTxt mb-0">3,567 points</p>
+                  </div>
+                </div>
+                <div class="leaderSubBox2">
+                  <img src="../images/user-icon.png" alt="" />
+                </div>
+              </div>
+              <div class="leaderInnrBox2">
+                <div class="progressBarContainer">
+                  <div class="prgrssBar prgrssPercent"></div>
+                </div>
+                <div class="levelContnt">
+                  <h3 class="reachTxt mb-0">Points to reach level 4:</h3>
+                  <p class="cntTxt mb-0">500/1000</p>
+                </div>
+              </div>
+              <div class="leaderInnrBox3">
+                <div class="unlockBlockContainer">
+                  <div class="unlockSubBox1">
+                    <img src="../images/level4.png" alt="" />
+                  </div>
+                  <div class="unlockSubBox1">
+                    <h3 class="ext1 mb-0">Level 4</h3>
+                    <p class="ext2 mb-0">Earn 1000 points to unlock</p>
+                  </div>
+                </div>
+                <div class="unlockBlockContainer">
+                  <div class="unlockSubBox1">
+                    <img src="../images/level5.png" alt="" />
+                  </div>
+                  <div class="unlockSubBox1">
+                    <h3 class="ext1 mb-0">Level 5</h3>
+                    <p class="ext2 mb-0">Earn 1500 points to unlock</p>
+                  </div>
+                </div>
+                <div class="unlockBlockContainer">
+                  <div class="unlockSubBox1">
+                    <img src="../images/level6.png" alt="" />
+                  </div>
+                  <div class="unlockSubBox1">
+                    <h3 class="ext1 mb-0">Level 6</h3>
+                    <p class="ext2 mb-0">Earn 2000 points to unlock</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tripSummaryContainer">
+            <div class="categoryHeader">
+              <div>
+                <h3 class="actionTxt mb-0">My Trip Summary</h3>
+              </div>
+              <div class="viewAllBtn">
+                <a class="viewAllTxt mb-0" href="#">View All <img src="../images/Arrows.png" alt="" /></a>
+              </div>
+            </div>
+            <div class="summaryBox">
+              <div class="alertBoxWrapper tripCont">
+                <div class="alertBox1">
+                  <div class="alertBoxInnr1">
+                    <img src="../images/via-flight.png" alt="" />
+                    <div class="alertSubBox">
+                      <div class="alertSubInnrBox">
+                        <h4 class="flightSummTxt mb-0">New York</h4>
+                        <img class="sideArrowImg" src="../images/Group 141.png" alt="" />
+                        <h4 class="flightSummTxt mb-0">London</h4>
+                      </div>
+                      <div class="domContnt">
+                        <h3 class="lightTxt mb-0">Domestic One Way</h3>
+                        <p class="lightTxt mb-0">
+                          Legal Entity: STR THOMASCOOK EVA
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="alertBox2">
+                  <h3 class="flightDelayTxt pendingApprovalTxt mb-0">
+                    Pending Approval
+                  </h3>
+                  <p class="flightTimeTxt mb-0">Trip ID:<span>124030</span></p>
+                </div>
+              </div>
+              <div class="alertBoxWrapper tripCont">
+                <div class="alertBox1">
+                  <div class="alertBoxInnr1">
+                    <img src="../images/via-bus.png" alt="" />
+                    <div class="alertSubBox">
+                      <div class="alertSubInnrBox">
+                        <h4 class="flightSummTxt mb-0">Delhi</h4>
+                        <img class="sideArrowImg" src="../images/Group 141.png" alt="" />
+                        <h4 class="flightSummTxt mb-0">Mumbai</h4>
+                      </div>
+                      <div class="domContnt">
+                        <h3 class="lightTxt mb-0">A/C Sleeper</h3>
+                        <p class="lightTxt mb-0">
+                          Legal Entity: STR THOMASCOOK EVA
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="alertBox2">
+                  <h3 class="flightDelayTxt pendingApprovalTxt mb-0">
+                    Pending Approval
+                  </h3>
+                  <p class="flightTimeTxt mb-0">Trip ID:<span>124030</span></p>
+                </div>
+              </div>
+              <div class="alertBoxWrapper tripCont">
+                <div class="alertBox1">
+                  <div class="alertBoxInnr1">
+                    <img src="../images/via-bus.png" alt="" />
+                    <div class="alertSubBox">
+                      <div class="alertSubInnrBox">
+                        <h4 class="flightSummTxt mb-0">Mumbai</h4>
+                        <img class="sideArrowImg" src="../images/Group 141.png" alt="" />
+                        <h4 class="flightSummTxt mb-0">Bengaluru</h4>
+                      </div>
+                      <div class="domContnt">
+                        <h3 class="lightTxt mb-0">Domestic One Way</h3>
+                        <p class="lightTxt mb-0">
+                          Legal Entity: STR THOMASCOOK EVA
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="alertBox2">
+                  <h3 class="flightDelayTxt pendingApprovalTxt mb-0">
+                    Pending Approval
+                  </h3>
+                  <p class="flightTimeTxt mb-0">Trip ID:<span>124030</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
 
 </html>
